@@ -1,0 +1,37 @@
+
+<p>Enter your cholesterol results here.</p>
+<form (ngSubmit)="submit()">
+    <fieldset>
+        <legend>Values</legend>
+        <p class="section-note">Core values used for your cholesterol profile.</p>
+
+        <label>
+            Total Cholesterol:
+            <input type="number" [(ngModel)]="total" name="total">
+        </label>
+        <label>
+            Ldl Cholesterol:
+            <input type="number" [(ngModel)]="ldl" name="ldl">
+        </label>
+        <label>
+            Hdl Cholesterol:
+            <input type="number" [(ngModel)]="hdl" name="hdl">
+        </label>
+        <label>
+            Triglycerides:
+            <input type="number" [(ngModel)]="triglycerides" name="triglycerides">
+        </label>
+    </fieldset>
+
+    <fieldset>
+        <legend>Record Details</legend>
+        <p class="section-note">When was this test taken?</p>
+
+        <label>
+            Date:
+            <input type="date" [(ngModel)]="date" name="date">
+        </label>
+    </fieldset>
+
+    <button type="submit">Submit</button>
+</form>

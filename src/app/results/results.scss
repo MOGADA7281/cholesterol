@@ -1,0 +1,98 @@
+:host {
+    display: block;
+    margin-top: -5rem;
+}
+
+h2 {
+    text-align: center;
+    margin: 0 0 0.35rem;
+    
+}
+
+p {
+    text-align: center;
+    margin: 0 0 0.75rem;
+    color: #4b5563;
+}
+
+form {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.95rem;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+fieldset {
+    margin: 0;
+    padding: 0.9rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    background: #f8fafc;
+}
+
+legend {
+    padding: 0 0.4rem;
+    font-weight: 700;
+    color: #1e3a8a;
+}
+
+.section-note {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #475569;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+input {
+    width: 100%;
+    padding: 0.6rem 0.7rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+
+input:focus {
+    outline: 2px solid #93c5fd;
+    outline-offset: 1px;
+    border-color: #3b82f6;
+}
+
+button {
+    margin-top: 0.25rem;
+    padding: 0.65rem 0.9rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #1d4ed8;
+    color: #ffffff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #1e40af;
+}
+
+@media (max-width: 520px) {
+    form {
+        margin: 0 0.75rem;
+        padding: 1rem;
+    }
+}
+

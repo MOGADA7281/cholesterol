@@ -1,0 +1,59 @@
+<h2></h2>
+<div class="dashboard">
+<div class="slideshow" role="region" aria-label="Cholesterol metrics slideshow">
+  @for (slide of slides(); track slide.title; let i = $index) {
+    <div class="slide-panel" [class.active]="i === slideIndex()" [attr.aria-hidden]="i !== slideIndex()">
+      <div class="metric-card">
+        <h2>{{ slide.title }}</h2>
+        <p>{{ slide.value }}</p>
+        <h3>Date of latest Input</h3>
+        <p>{{ formatDate(slide.date) }}</p>
+      </div>
+
+      <div class="status-card">
+        <p
+          class="metric-status"
+          [class.good]="status(slide.metric) === 'Good'"
+          [class.bad]="status(slide.metric) === 'Bad'"
+          [class.empty]="status(slide.metric) === 'No data'">
+          Status: {{ status(slide.metric) }}
+        </p>
+      </div>
+    </div>
+  }
+  <div class="controls">
+  <button routerLink="/results" type="button" class="results" >
+    Put Results
+    
+  </button>
+
+  <button routerLink="/history" type="button" class="history" >
+    History
+    
+  </button>
+  </div>
+  <button type="button" class="nav prev" (click)="plusSlides(-1)" aria-label="Previous metric slide">
+    &#10094;
+  </button>
+  <button type="button" class="nav next" (click)="plusSlides(1)" aria-label="Next metric slide">
+    &#10095;
+  </button>
+</div>
+
+</div>
+
+<div class="dots" aria-label="Choose metric slide">
+  @for (slide of slides(); track slide.title; let i = $index) {
+    <button
+      type="button"
+      class="dot"
+      [class.active]="i === slideIndex()"
+      [attr.aria-label]="'Go to ' + slide.title"
+      (click)="currentSlide(i)">
+    </button>
+  }
+</div>
+
+@if (!hasData()) {
+  <p>No cholesterol data available. Please add a reading in the <a routerLink="/results">Results</a> page.</p>
+}

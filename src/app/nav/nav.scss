@@ -1,0 +1,37 @@
+/* Recreated navigation styles */
+:host {
+  display: block;
+  background-color: #333;
+  color: white;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* center links horizontally */
+  padding: 0 1rem;
+  text-align:center; /* center links vertically */
+  
+
+}
+
+a {
+  display: inline-block;
+  color: rgb(237, 226, 226);
+  text-decoration :none;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a:hover {
+  background-color: rgba(152, 151, 151, 0.1);
+}
+
+a.active {
+  background-color: rgba(152, 151, 151, 0.2);
+  color: #ffffff;
+  
+}
