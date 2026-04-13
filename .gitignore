@@ -11,6 +11,10 @@
 npm-debug.log
 yarn-error.log
 
+# npm broken folders (your issue)
+Users OgadaAppDataLocalnpm-cache/
+Users OgadaAppDataRoamingnpm/
+
 # IDEs and editors
 .idea/
 .project
