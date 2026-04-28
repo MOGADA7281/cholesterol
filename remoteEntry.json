@@ -3,7 +3,7 @@
   "shared": [
     {
       "packageName": "@angular/common",
-      "outFileName": "_angular_common.05ZQYPMAXz.js",
+      "outFileName": "_angular_common.8whQUdUXuj.js",
       "requiredVersion": "^21.2.8",
       "singleton": true,
       "strictVersion": true,
@@ -11,7 +11,7 @@
     },
     {
       "packageName": "@angular/common/http",
-      "outFileName": "_angular_common_http.ZyfaNFvVO0.js",
+      "outFileName": "_angular_common_http.xTJ3LJc4pW.js",
       "requiredVersion": "^21.2.8",
       "singleton": true,
       "strictVersion": true,
@@ -19,7 +19,7 @@
     },
     {
       "packageName": "@angular/core",
-      "outFileName": "_angular_core.53gxJ1gT_3.js",
+      "outFileName": "_angular_core.GJeoQycIci.js",
       "requiredVersion": "^21.2.8",
       "singleton": true,
       "strictVersion": true,
@@ -27,7 +27,7 @@
     },
     {
       "packageName": "@angular/core/primitives/di",
-      "outFileName": "_angular_core_primitives_di.WNwvuxvxle.js",
+      "outFileName": "_angular_core_primitives_di.bwE6cvJJXT.js",
       "requiredVersion": "^21.2.8",
       "singleton": true,
       "strictVersion": true,
@@ -35,7 +35,7 @@
     },
     {
       "packageName": "@angular/core/primitives/signals",
-      "outFileName": "_angular_core_primitives_signals.oz3cNXIQpH.js",
+      "outFileName": "_angular_core_primitives_signals.io84MA3Tl2.js",
       "requiredVersion": "^21.2.8",
       "singleton": true,
       "strictVersion": true,
@@ -43,7 +43,7 @@
     },
     {
       "packageName": "@angular/forms",
-      "outFileName": "_angular_forms.jXbSKsDZLn.js",
+      "outFileName": "_angular_forms.vvjkzk97dT.js",
       "requiredVersion": "^21.2.8",
       "singleton": true,
       "strictVersion": true,
@@ -51,7 +51,7 @@
     },
     {
       "packageName": "@angular/platform-browser",
-      "outFileName": "_angular_platform_browser.P9-uISENte.js",
+      "outFileName": "_angular_platform_browser.rKVDu_tOu2.js",
       "requiredVersion": "^21.2.8",
       "singleton": true,
       "strictVersion": true,
@@ -59,7 +59,7 @@
     },
     {
       "packageName": "@angular/router",
-      "outFileName": "_angular_router.QaVUxch6XN.js",
+      "outFileName": "_angular_router.EQxlmm-JRt.js",
       "requiredVersion": "^21.2.8",
       "singleton": true,
       "strictVersion": true,
@@ -67,7 +67,7 @@
     },
     {
       "packageName": "chart.js",
-      "outFileName": "chart_js.SZN9PBZ95q.js",
+      "outFileName": "chart_js.vtfM80HccV.js",
       "requiredVersion": "^4.5.1",
       "singleton": true,
       "strictVersion": true,
@@ -75,7 +75,7 @@
     },
     {
       "packageName": "chartjs-adapter-date-fns",
-      "outFileName": "chartjs_adapter_date_fns.AhRCFCwQDv.js",
+      "outFileName": "chartjs_adapter_date_fns.s9IPe-ofoo.js",
       "requiredVersion": "^3.0.0",
       "singleton": true,
       "strictVersion": true,
@@ -83,7 +83,7 @@
     },
     {
       "packageName": "date-fns",
-      "outFileName": "date_fns.xbokCC44OA.js",
+      "outFileName": "date_fns.dUMseGghaL.js",
       "requiredVersion": "^4.1.0",
       "singleton": true,
       "strictVersion": true,
@@ -91,7 +91,7 @@
     },
     {
       "packageName": "rxjs",
-      "outFileName": "rxjs.Giz24IdTBc.js",
+      "outFileName": "rxjs.QaX992el0h.js",
       "requiredVersion": "~7.8.0",
       "singleton": true,
       "strictVersion": true,
@@ -99,7 +99,7 @@
     },
     {
       "packageName": "rxjs/operators",
-      "outFileName": "rxjs_operators.XAlIcny7wD.js",
+      "outFileName": "rxjs_operators.g5_5zb9zEf.js",
       "requiredVersion": "~7.8.0",
       "singleton": true,
       "strictVersion": true,
@@ -107,7 +107,7 @@
     },
     {
       "packageName": "tslib",
-      "outFileName": "tslib.Bkq2TuUrID.js",
+      "outFileName": "tslib.qeQf7BNAk5.js",
       "requiredVersion": "^2.3.0",
       "singleton": true,
       "strictVersion": true,
@@ -157,7 +157,15 @@
   "exposes": [
     {
       "key": "./Component",
-      "outFileName": "Component-WDHYAD5H.js"
+      "outFileName": "Component-GXK3Y3K5.js"
+    },
+    {
+      "key": "./History",
+      "outFileName": "History-PIQUHW2Y.js"
+    },
+    {
+      "key": "./Results",
+      "outFileName": "Results-3N635LD3.js"
     }
   ]
 }
