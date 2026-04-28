@@ -3,7 +3,7 @@
   "shared": [
     {
       "packageName": "@angular/common",
-      "outFileName": "_angular_common.fehnthpTXc.js",
+      "outFileName": "_angular_common.05ZQYPMAXz.js",
       "requiredVersion": "^21.2.8",
       "singleton": true,
       "strictVersion": true,
@@ -11,7 +11,7 @@
     },
     {
       "packageName": "@angular/common/http",
-      "outFileName": "_angular_common_http.YxX5xovUMs.js",
+      "outFileName": "_angular_common_http.ZyfaNFvVO0.js",
       "requiredVersion": "^21.2.8",
       "singleton": true,
       "strictVersion": true,
@@ -19,7 +19,7 @@
     },
     {
       "packageName": "@angular/core",
-      "outFileName": "_angular_core.1jPEOmt2lr.js",
+      "outFileName": "_angular_core.53gxJ1gT_3.js",
       "requiredVersion": "^21.2.8",
       "singleton": true,
       "strictVersion": true,
@@ -27,7 +27,7 @@
     },
     {
       "packageName": "@angular/core/primitives/di",
-      "outFileName": "_angular_core_primitives_di.nZL5uwum2j.js",
+      "outFileName": "_angular_core_primitives_di.WNwvuxvxle.js",
       "requiredVersion": "^21.2.8",
       "singleton": true,
       "strictVersion": true,
@@ -35,7 +35,7 @@
     },
     {
       "packageName": "@angular/core/primitives/signals",
-      "outFileName": "_angular_core_primitives_signals.evwub5Klev.js",
+      "outFileName": "_angular_core_primitives_signals.oz3cNXIQpH.js",
       "requiredVersion": "^21.2.8",
       "singleton": true,
       "strictVersion": true,
@@ -43,7 +43,7 @@
     },
     {
       "packageName": "@angular/forms",
-      "outFileName": "_angular_forms.y9Sb4oDz6k.js",
+      "outFileName": "_angular_forms.jXbSKsDZLn.js",
       "requiredVersion": "^21.2.8",
       "singleton": true,
       "strictVersion": true,
@@ -51,7 +51,7 @@
     },
     {
       "packageName": "@angular/platform-browser",
-      "outFileName": "_angular_platform_browser.mo1gtTb2Mb.js",
+      "outFileName": "_angular_platform_browser.P9-uISENte.js",
       "requiredVersion": "^21.2.8",
       "singleton": true,
       "strictVersion": true,
@@ -59,7 +59,7 @@
     },
     {
       "packageName": "@angular/router",
-      "outFileName": "_angular_router.1piQyK7DA6.js",
+      "outFileName": "_angular_router.QaVUxch6XN.js",
       "requiredVersion": "^21.2.8",
       "singleton": true,
       "strictVersion": true,
@@ -67,7 +67,7 @@
     },
     {
       "packageName": "chart.js",
-      "outFileName": "chart_js.tSnAIowlpu.js",
+      "outFileName": "chart_js.SZN9PBZ95q.js",
       "requiredVersion": "^4.5.1",
       "singleton": true,
       "strictVersion": true,
@@ -75,7 +75,7 @@
     },
     {
       "packageName": "chartjs-adapter-date-fns",
-      "outFileName": "chartjs_adapter_date_fns.cVexxr5_86.js",
+      "outFileName": "chartjs_adapter_date_fns.AhRCFCwQDv.js",
       "requiredVersion": "^3.0.0",
       "singleton": true,
       "strictVersion": true,
@@ -83,7 +83,7 @@
     },
     {
       "packageName": "date-fns",
-      "outFileName": "date_fns.yJgNEX59tv.js",
+      "outFileName": "date_fns.xbokCC44OA.js",
       "requiredVersion": "^4.1.0",
       "singleton": true,
       "strictVersion": true,
@@ -91,7 +91,7 @@
     },
     {
       "packageName": "rxjs",
-      "outFileName": "rxjs.x_7cmf8Wy1.js",
+      "outFileName": "rxjs.Giz24IdTBc.js",
       "requiredVersion": "~7.8.0",
       "singleton": true,
       "strictVersion": true,
@@ -99,7 +99,7 @@
     },
     {
       "packageName": "rxjs/operators",
-      "outFileName": "rxjs_operators.cj4MYdlP7C.js",
+      "outFileName": "rxjs_operators.XAlIcny7wD.js",
       "requiredVersion": "~7.8.0",
       "singleton": true,
       "strictVersion": true,
@@ -107,7 +107,7 @@
     },
     {
       "packageName": "tslib",
-      "outFileName": "tslib.fa3x9HwJlz.js",
+      "outFileName": "tslib.Bkq2TuUrID.js",
       "requiredVersion": "^2.3.0",
       "singleton": true,
       "strictVersion": true,
@@ -157,7 +157,7 @@
   "exposes": [
     {
       "key": "./Component",
-      "outFileName": "Component-KM2CRIMG.js"
+      "outFileName": "Component-WDHYAD5H.js"
     }
   ]
 }

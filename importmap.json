@@ -1,0 +1,23 @@
+{
+  "imports": {
+    "@angular/common": "_angular_common.05ZQYPMAXz.js",
+    "@angular/common/http": "_angular_common_http.ZyfaNFvVO0.js",
+    "@angular/core": "_angular_core.53gxJ1gT_3.js",
+    "@angular/core/primitives/di": "_angular_core_primitives_di.WNwvuxvxle.js",
+    "@angular/core/primitives/signals": "_angular_core_primitives_signals.oz3cNXIQpH.js",
+    "@angular/forms": "_angular_forms.jXbSKsDZLn.js",
+    "@angular/platform-browser": "_angular_platform_browser.P9-uISENte.js",
+    "@angular/router": "_angular_router.QaVUxch6XN.js",
+    "chart.js": "chart_js.SZN9PBZ95q.js",
+    "chartjs-adapter-date-fns": "chartjs_adapter_date_fns.AhRCFCwQDv.js",
+    "date-fns": "date_fns.xbokCC44OA.js",
+    "rxjs": "rxjs.Giz24IdTBc.js",
+    "rxjs/operators": "rxjs_operators.XAlIcny7wD.js",
+    "tslib": "tslib.Bkq2TuUrID.js",
+    "@nf-internal/chunk-KNUKVBCT": "chunk-KNUKVBCT.js",
+    "@nf-internal/chunk-DOT4ATRE": "chunk-DOT4ATRE.js",
+    "@nf-internal/chunk-P2OSO4XP": "chunk-P2OSO4XP.js",
+    "@nf-internal/chunk-RFPVFFLR": "chunk-RFPVFFLR.js",
+    "@nf-internal/chunk-4CLCTAJ7": "chunk-4CLCTAJ7.js"
+  }
+}
