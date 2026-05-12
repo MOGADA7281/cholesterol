@@ -1,5 +1,83 @@
-h2{
+:host {
+  display: block;
+}
 
-    text-align: center;
-    margin: 20px 10px;
+h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #1f2937;
+}
+
+.history-page {
+  max-width: 760px;
+  margin: 5rem auto 0;
+  padding: 0 1rem;
+}
+
+.chart-container {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #ffffff !important;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+  padding: 1.25rem;
+  min-height: 350px;
+}
+
+canvas {
+  width: 100% !important;
+  height: 320px !important;
+  background-color: #ffffff !important;
+}
+
+/* Buttons under chart, same as dashboard */
+.controls {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem; /* 🔥 bigger gap = separated */
+}
+
+/* SAME style as dashboard */
+.results,
+.history-btn {
+  padding: 0.55rem 0.9rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #0284c7;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* Hover same as dashboard */
+.results:hover,
+.history-btn:hover {
+  background-color: #0369a1;
+}
+
+/* Focus */
+.results:focus-visible,
+.history-btn:focus-visible {
+  outline: 2px solid #0ea5e9;
+  outline-offset: 2px;
+}
+
+/* OPTIONAL: make clear button slightly different */
+.history-btn {
+  background-color: #ef4444; /* red */
+}
+
+.history-btn:hover {
+  background-color: #dc2626;
+}
+@media (max-width: 560px) {
+  .chart-container {
+    padding: 0.9rem;
+  }
+
+  canvas {
+    height: 260px !important;
+  }
 }

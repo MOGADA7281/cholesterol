@@ -1,8 +1,18 @@
-<h2>History</h2>
+<div class="history-page">
+  <h2>History</h2>
 
+  <div class="chart-container">
+    <canvas id="myChart"></canvas>
+  </div>
 
-<div class="chart-container">
-  <canvas id="myChart"></canvas>
+  <!-- buttons OUTSIDE but spaced -->
+  <div class="controls">
+    <button type="button" class="results" (click)="exportHistory()">
+      Export
+    </button>
+
+    <button type="button" class="history-btn" (click)="clearHistory()">
+      Clear History
+    </button>
+  </div>
 </div>
-
-<button (click)="generate()">Generate Test Result</button>
