@@ -142,7 +142,7 @@ var Tn = (() => { class t extends q {
     static \u0275fac = function (i) { return new (i || t)(o.\u0275\u0275directiveInject(u, 10)); };
     static \u0275dir = o.\u0275\u0275defineDirective({ type: t, selectors: [["", "formGroupName", ""], ["", "formArrayName", ""], ["", "ngModelGroup", ""], ["", "formGroup", ""], ["", "formArray", ""], ["form", 3, "ngNoForm", ""], ["", "ngForm", ""]], hostVars: 16, hostBindings: function (i, r) { i & 2 && o.\u0275\u0275classProp("ng-untouched", r.isUntouched)("ng-touched", r.isTouched)("ng-pristine", r.isPristine)("ng-dirty", r.isDirty)("ng-valid", r.isValid)("ng-invalid", r.isInvalid)("ng-pending", r.isPending)("ng-submitted", r.isSubmitted); }, standalone: !1, features: [o.\u0275\u0275InheritDefinitionFeature] });
 } return t; })();
-var Un = new ct("21.2.8");
+var Un = new ct("21.2.12");
 var I = "VALID", H = "INVALID", A = "PENDING", S = "DISABLED", v = class {
 }, z = class extends v {
     value;
@@ -176,7 +176,7 @@ function qe(t, n, e) { let i = t.controls; if (!(n ? Object.keys(i) : i).length)
     throw new ne(1e3, ""); if (!i[e])
     throw new ne(1001, ""); }
 function ze(t, n, e) { t._forEachChild((i, r) => { if (e[r] === void 0)
-    throw new ne(1002, ""); }); }
+    throw new ne(-1002, ""); }); }
 var E = class {
     _pendingDirty = !1;
     _hasOwnPendingAsyncValidator = null;
@@ -682,10 +682,10 @@ var rt = (() => { class t extends V {
     _compareWith = Object.is;
     writeValue(e) { this.value = e; let i; if (Array.isArray(e)) {
         let r = e.map(s => this._getOptionId(s));
-        i = (s, a) => { s._setSelected(r.indexOf(a.toString()) > -1); };
+        i = (s, a) => { s._setSelected(r.indexOf(a) > -1); };
     }
     else
-        i = (r, s) => { r._setSelected(!1); }; this._optionMap.forEach(i); }
+        i = r => { r._setSelected(!1); }; this._optionMap.forEach(i); }
     registerOnChange(e) { this.onChange = i => { let r = [], s = i.selectedOptions; if (s !== void 0) {
         let a = s;
         for (let p = 0; p < a.length; p++) {
@@ -845,7 +845,7 @@ export { E as AbstractControl, W as AbstractControlDirective, ge as AbstractForm
 
 @angular/forms/fesm2022/forms.mjs:
   (**
-   * @license Angular v21.2.8
+   * @license Angular v21.2.12
    * (c) 2010-2026 Google LLC. https://angular.dev/
    * License: MIT
    *)

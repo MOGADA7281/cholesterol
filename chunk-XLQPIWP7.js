@@ -46,7 +46,7 @@ export { i as a, m as b, s as c, f as d, w as e, g as f, I as g, l as h };
 @angular/common/fesm2022/_platform_location-chunk.mjs:
 @angular/common/fesm2022/_xhr-chunk.mjs:
   (**
-   * @license Angular v21.2.8
+   * @license Angular v21.2.12
    * (c) 2010-2026 Google LLC. https://angular.dev/
    * License: MIT
    *)

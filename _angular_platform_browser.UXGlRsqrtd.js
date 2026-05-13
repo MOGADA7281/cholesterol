@@ -359,7 +359,7 @@ function wn() { return A(m.EventReplay, _t()); }
 function _n() { return A(m.IncrementalHydration, Dt()); }
 function Tn(...n) { let r = [], e = new Set; for (let { \u0275providers: o, \u0275kind: s } of n)
     e.add(s), o.length && r.push(o); let t = e.has(m.HttpTransferCacheOptions); return Mt([[], [], wt(), e.has(m.NoHttpTransferCache) || t ? [] : Me({}), r]); }
-var Dn = new Rt("21.2.8");
+var Dn = new Rt("21.2.12");
 export { dt as BrowserModule, ye as By, Nt as DomSanitizer, S as EVENT_MANAGER_PLUGINS, P as EventManager, g as EventManagerPlugin, X as HAMMER_GESTURE_CONFIG, Te as HAMMER_LOADER, It as HammerGestureConfig, yn as HammerModule, m as HydrationFeatureKind, hn as Meta, se as REMOVE_STYLES_ON_COMPONENT_DESTROY, mn as Title, Dn as VERSION, rt as bootstrapApplication, ot as createApplication, vn as disableDebugTools, gn as enableDebugTools, lt as platformBrowser, Tn as provideClientHydration, st as provideProtractorTestingSupport, wn as withEventReplay, Sn as withHttpTransferCacheOptions, Mn as withI18nSupport, _n as withIncrementalHydration, En as withNoHttpTransferCache, j as \u0275BrowserDomAdapter, x as \u0275BrowserGetTestability, w as \u0275DomEventsPlugin, U as \u0275DomRendererFactory2, Lt as \u0275DomSanitizerImpl, Ot as \u0275HammerGesturesPlugin, fe as \u0275KeyEventsPlugin, k as \u0275SharedStylesHost, An as \u0275getDOM };
 /*! Bundled license information:
 
@@ -367,7 +367,7 @@ export { dt as BrowserModule, ye as By, Nt as DomSanitizer, S as EVENT_MANAGER_P
 @angular/platform-browser/fesm2022/_browser-chunk.mjs:
 @angular/platform-browser/fesm2022/platform-browser.mjs:
   (**
-   * @license Angular v21.2.8
+   * @license Angular v21.2.12
    * (c) 2010-2026 Google LLC. https://angular.dev/
    * License: MIT
    *)

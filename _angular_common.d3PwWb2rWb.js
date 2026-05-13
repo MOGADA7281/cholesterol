@@ -1,4 +1,4 @@
-import { a as Rt, b as Ot, c as Pt, d as U, e as Bt, f as Nt, g as kt, h as xt } from "@nf-internal/chunk-DOT4ATRE";
+import { a as Rt, b as Ot, c as Pt, d as U, e as Bt, f as Nt, g as kt, h as xt } from "@nf-internal/chunk-XLQPIWP7";
 import { a as Y, b as K } from "@nf-internal/chunk-4CLCTAJ7";
 import * as _ from "@angular/core";
 import { InjectionToken as $t, inject as Ue, DOCUMENT as Ut, \u0275\u0275inject as jt } from "@angular/core";
@@ -970,7 +970,7 @@ function vr(e, i, t) { return di(e, i, t); }
 var wi = "browser", Ai = "server";
 function Ir(e) { return e === wi; }
 function Lr(e) { return e === Ai; }
-var Mr = new li("21.2.8"), Tr = (() => { class e {
+var Mr = new li("21.2.12"), Tr = (() => { class e {
     static \u0275prov = fi({ token: e, providedIn: "root", factory: () => typeof ngServerMode < "u" && ngServerMode ? new Re : new Te(L(It), window) });
 } return e; })(), Te = class {
     document;
@@ -980,7 +980,7 @@ var Mr = new li("21.2.8"), Tr = (() => { class e {
     setOffset(i) { Array.isArray(i) ? this.offset = () => i : this.offset = i; }
     getScrollPosition() { return [this.window.scrollX, this.window.scrollY]; }
     scrollToPosition(i, t) { this.window.scrollTo(K(Y({}, t), { left: i[0], top: i[1] })); }
-    scrollToAnchor(i, t) { let n = Si(this.document, i); n && (this.scrollToElement(n, t), n.focus()); }
+    scrollToAnchor(i, t) { let n = Si(this.document, i); n && (this.scrollToElement(n, t), n.focus({ preventScroll: !0 })); }
     setHistoryScrollRestoration(i) { try {
         this.window.history.scrollRestoration = i;
     }
@@ -1006,7 +1006,7 @@ var Re = class {
     setOffset(i) { }
     getScrollPosition() { return [0, 0]; }
     scrollToPosition(i) { }
-    scrollToAnchor(i) { }
+    scrollToAnchor(i, t) { }
     setHistoryScrollRestoration(i) { }
 }, le = "20";
 function Lt(e) { return /^https?:\/\//.test(e); }
@@ -1128,7 +1128,7 @@ export { q as APP_BASE_HREF, Hn as AsyncPipe, Nt as BrowserPlatformLocation, ai 
 @angular/common/fesm2022/_platform_navigation-chunk.mjs:
 @angular/common/fesm2022/common.mjs:
   (**
-   * @license Angular v21.2.8
+   * @license Angular v21.2.12
    * (c) 2010-2026 Google LLC. https://angular.dev/
    * License: MIT
    *)

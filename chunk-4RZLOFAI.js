@@ -147,7 +147,7 @@ export { S as a, f as b, J as c, Q as d, X as e, E as f, w as g, U as h, m as i,
 @angular/core/fesm2022/_untracked-chunk.mjs:
 @angular/core/fesm2022/_weak_ref-chunk.mjs:
   (**
-   * @license Angular v21.2.8
+   * @license Angular v21.2.12
    * (c) 2010-2026 Google LLC. https://angular.dev/
    * License: MIT
    *)

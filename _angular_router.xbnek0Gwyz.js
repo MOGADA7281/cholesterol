@@ -1,10 +1,10 @@
 import { a as l, b as E, d as R } from "@nf-internal/chunk-4CLCTAJ7";
 import { DOCUMENT as $n, Location as Jt } from "@angular/common";
 import * as y from "@angular/core";
-import { \u0275isPromise as zn, \u0275RuntimeError as A, computed as Fn, InjectionToken as ne, EventEmitter as Ye, input as qn, inject as g, ViewContainerRef as Hn, ChangeDetectorRef as Bn, reflectComponentType as Vn, runInInjectionContext as L, \u0275isInjectable as Gn, \u0275isNgModule as za, isStandalone as Fa, createEnvironmentInjector as Wn, Compiler as Qn, NgModuleFactory as Kn, afterNextRender as Yn, signal as Cr, EnvironmentInjector as Xt, DestroyRef as Zn, untracked as Oe, \u0275Console as Jn, \u0275PendingTasksInternal as Xn, \u0275INTERNAL_APPLICATION_ERROR_HANDLER as ei, \u0275formatRuntimeError as ti } from "@angular/core";
+import { \u0275isPromise as zn, \u0275RuntimeError as A, computed as Fn, InjectionToken as ne, EventEmitter as Ye, input as qn, inject as g, ViewContainerRef as Hn, ChangeDetectorRef as Bn, reflectComponentType as Vn, runInInjectionContext as L, \u0275isInjectable as Gn, \u0275isNgModule as za, isStandalone as Fa, createEnvironmentInjector as Wn, Compiler as Qn, NgModuleFactory as Kn, afterNextRender as Yn, signal as Cr, EnvironmentInjector as Xt, DestroyRef as Zn, untracked as Ue, \u0275Console as Jn, \u0275PendingTasksInternal as Xn, \u0275INTERNAL_APPLICATION_ERROR_HANDLER as ei, \u0275formatRuntimeError as ti } from "@angular/core";
 import { isObservable as Mr, from as G, of as v, BehaviorSubject as z, combineLatest as Tr, EmptyError as ri, Observable as ni, concat as ii, defer as er, pipe as oi, EMPTY as $, throwError as ai, Subject as Pt, Subscription as si } from "rxjs";
-import { first as he, map as D, switchMap as B, take as Le, startWith as ci, filter as xe, takeUntil as Lt, mergeMap as ue, concatMap as Dr, tap as V, takeLast as Nr, catchError as _r, finalize as ui } from "rxjs/operators";
-import * as Or from "@angular/platform-browser";
+import { first as he, map as N, switchMap as B, take as Le, startWith as ci, filter as xe, takeUntil as Lt, mergeMap as ue, concatMap as Nr, tap as V, takeLast as Dr, catchError as _r, finalize as ui } from "rxjs/operators";
+import * as Ur from "@angular/platform-browser";
 var p = "primary", Be = Symbol("RouteTitle"), xt = class {
     params;
     constructor(n) { this.params = n || {}; }
@@ -20,21 +20,21 @@ var p = "primary", Be = Symbol("RouteTitle"), xt = class {
     get keys() { return Object.keys(this.params); }
 };
 function le(t) { return new xt(t); }
-function Nt(t, n, e) { for (let r = 0; r < t.length; r++) {
+function Dt(t, n, e) { for (let r = 0; r < t.length; r++) {
     let i = t[r], o = n[r];
     if (i[0] === ":")
         e[i.substring(1)] = o;
     else if (i !== o.path)
         return !1;
 } return !0; }
-function Ur(t, n, e) { let r = e.path.split("/"), i = r.indexOf("**"); if (i === -1) {
+function Or(t, n, e) { let r = e.path.split("/"), i = r.indexOf("**"); if (i === -1) {
     if (r.length > t.length || e.pathMatch === "full" && (n.hasChildren() || r.length < t.length))
         return null;
     let c = {}, u = t.slice(0, r.length);
-    return Nt(r, u, c) ? { consumed: u, posParams: c } : null;
+    return Dt(r, u, c) ? { consumed: u, posParams: c } : null;
 } if (i !== r.lastIndexOf("**"))
     return null; let o = r.slice(0, i), s = r.slice(i + 1); if (o.length + s.length > t.length || e.pathMatch === "full" && n.hasChildren() && e.path !== "**")
-    return null; let a = {}; return !Nt(o, t.slice(0, o.length), a) || !Nt(s, t.slice(t.length - s.length), a) ? null : { consumed: t, posParams: a }; }
+    return null; let a = {}; return !Dt(o, t.slice(0, o.length), a) || !Dt(s, t.slice(t.length - s.length), a) ? null : { consumed: t, posParams: a }; }
 function rt(t) { return new Promise((n, e) => { t.pipe(he()).subscribe({ next: r => n(r), error: r => e(r) }); }); }
 function li(t, n) { if (t.length !== n.length)
     return !1; for (let e = 0; e < t.length; ++e)
@@ -115,16 +115,16 @@ var ie = (() => { class t {
     static \u0275prov = y.\u0275\u0275defineInjectable({ token: t, factory: () => new Z, providedIn: "root" });
 } return t; })(), Z = class {
     parse(n) { let e = new zt(n); return new T(e.parseRootSegment(), e.parseQueryParams(), e.parseFragment()); }
-    serialize(n) { let e = `/${Ne(n.root, !0)}`, r = Ci(n.queryParams), i = typeof n.fragment == "string" ? `#${yi(n.fragment)}` : ""; return `${e}${r}${i}`; }
+    serialize(n) { let e = `/${De(n.root, !0)}`, r = Ci(n.queryParams), i = typeof n.fragment == "string" ? `#${yi(n.fragment)}` : ""; return `${e}${r}${i}`; }
 }, mi = new Z;
 function et(t) { return t.segments.map(n => Fr(n)).join("/"); }
-function Ne(t, n) { if (!t.hasChildren())
+function De(t, n) { if (!t.hasChildren())
     return et(t); if (n) {
-    let e = t.children[p] ? Ne(t.children[p], !1) : "", r = [];
-    return Object.entries(t.children).forEach(([i, o]) => { i !== p && r.push(`${i}:${Ne(o, !1)}`); }), r.length > 0 ? `${e}(${r.join("//")})` : e;
+    let e = t.children[p] ? De(t.children[p], !1) : "", r = [];
+    return Object.entries(t.children).forEach(([i, o]) => { i !== p && r.push(`${i}:${De(o, !1)}`); }), r.length > 0 ? `${e}(${r.join("//")})` : e;
 }
 else {
-    let e = vi(t, (r, i) => i === p ? [Ne(t.children[p], !1)] : [`${i}:${Ne(r, !1)}`]);
+    let e = vi(t, (r, i) => i === p ? [De(t.children[p], !1)] : [`${i}:${De(r, !1)}`]);
     return Object.keys(t.children).length === 1 && t.children[p] != null ? `${et(t)}/${e[0]}` : `${et(t)}/(${e.join("//")})`;
 } }
 function zr(t) { return encodeURIComponent(t).replace(/%40/g, "@").replace(/%3A/gi, ":").replace(/%24/g, "$").replace(/%2C/gi, ","); }
@@ -148,7 +148,8 @@ var zt = class {
     url;
     remaining;
     constructor(n) { this.url = n, this.remaining = n; }
-    parseRootSegment() { return this.consumeOptional("/"), this.remaining === "" || this.peekStartsWith("?") || this.peekStartsWith("#") ? new m([], {}) : new m([], this.parseChildren()); }
+    parseRootSegment() { for (; this.consumeOptional("/");)
+        ; return this.remaining === "" || this.peekStartsWith("?") || this.peekStartsWith("#") ? new m([], {}) : new m([], this.parseChildren()); }
     parseQueryParams() { let n = {}; if (this.consumeOptional("?"))
         do
             this.parseQueryParam(n);
@@ -212,12 +213,12 @@ function Vr(t) { let n; function e(o) { let s = {}; for (let c of o.children) {
 } let a = new m(o.url, s); return o === t && (n = a), a; } let r = e(t.root), i = qr(r); return n ?? i; }
 function Gr(t, n, e, r, i) { let o = t; for (; o.parent;)
     o = o.parent; if (n.length === 0)
-    return Ot(o, o, o, e, r, i); let s = Di(n); if (s.toRoot())
-    return Ot(o, o, new m([], {}), e, r, i); let a = Ni(s, o, t), c = a.processChildren ? Ue(a.segmentGroup, a.index, s.commands) : Qr(a.segmentGroup, a.index, s.commands); return Ot(o, a.segmentGroup, c, e, r, i); }
+    return Ut(o, o, o, e, r, i); let s = Ni(n); if (s.toRoot())
+    return Ut(o, o, new m([], {}), e, r, i); let a = Di(s, o, t), c = a.processChildren ? Oe(a.segmentGroup, a.index, s.commands) : Qr(a.segmentGroup, a.index, s.commands); return Ut(o, a.segmentGroup, c, e, r, i); }
 function nt(t) { return typeof t == "object" && t != null && !t.outlets && !t.segmentPath; }
 function ke(t) { return typeof t == "object" && t != null && t.outlets; }
 function wr(t, n, e) { t ||= "\u0275"; let r = new T; return r.queryParams = { [t]: n }, e.parse(e.serialize(r)).queryParams[t]; }
-function Ot(t, n, e, r, i, o) { let s = {}; for (let [u, h] of Object.entries(r ?? {}))
+function Ut(t, n, e, r, i, o) { let s = {}; for (let [u, h] of Object.entries(r ?? {}))
     s[u] = Array.isArray(h) ? h.map(f => wr(u, f, o)) : wr(u, h, o); let a; t === n ? a = e : a = Wr(t, n, e); let c = qr(Hr(a)); return new T(c, s, i); }
 function Wr(t, n, e) { let r = {}; return Object.entries(t.children).forEach(([i, o]) => { o === n ? r[i] = e : r[i] = Wr(o, n, e); }), new m(t.segments, r); }
 var it = class {
@@ -229,7 +230,7 @@ var it = class {
         throw new A(4004, !1); }
     toRoot() { return this.isAbsolute && this.commands.length === 1 && this.commands[0] == "/"; }
 };
-function Di(t) { if (typeof t[0] == "string" && t.length === 1 && t[0] === "/")
+function Ni(t) { if (typeof t[0] == "string" && t.length === 1 && t[0] === "/")
     return new it(!0, 0, t); let n = 0, e = !1, r = t.reduce((i, o, s) => { if (typeof o == "object" && o != null) {
     if (o.outlets) {
         let a = {};
@@ -244,7 +245,7 @@ var me = class {
     index;
     constructor(n, e, r) { this.segmentGroup = n, this.processChildren = e, this.index = r; }
 };
-function Ni(t, n, e) { if (t.isAbsolute)
+function Di(t, n, e) { if (t.isAbsolute)
     return new me(n, !0, 0); if (!e)
     return new me(n, !1, NaN); if (e.parent === null)
     return new me(e, !0, 0); let r = nt(t.commands[0]) ? 0 : 1, i = e.segments.length - 1 + r; return _i(e, i, t.numberOfDoubleDots); }
@@ -253,24 +254,24 @@ function _i(t, n, e) { let r = t, i = n, o = e; for (; o > i;) {
         throw new A(4005, !1);
     i = r.segments.length;
 } return new me(r, !1, i - o); }
-function Oi(t) { return ke(t[0]) ? t[0].outlets : { [p]: t }; }
+function Ui(t) { return ke(t[0]) ? t[0].outlets : { [p]: t }; }
 function Qr(t, n, e) { if (t ??= new m([], {}), t.segments.length === 0 && t.hasChildren())
-    return Ue(t, n, e); let r = Ui(t, n, e), i = e.slice(r.commandIndex); if (r.match && r.pathIndex < t.segments.length) {
+    return Oe(t, n, e); let r = Oi(t, n, e), i = e.slice(r.commandIndex); if (r.match && r.pathIndex < t.segments.length) {
     let o = new m(t.segments.slice(0, r.pathIndex), {});
-    return o.children[p] = new m(t.segments.slice(r.pathIndex), t.children), Ue(o, 0, i);
+    return o.children[p] = new m(t.segments.slice(r.pathIndex), t.children), Oe(o, 0, i);
 }
 else
-    return r.match && i.length === 0 ? new m(t.segments, {}) : r.match && !t.hasChildren() ? Ft(t, n, e) : r.match ? Ue(t, 0, i) : Ft(t, n, e); }
-function Ue(t, n, e) { if (e.length === 0)
+    return r.match && i.length === 0 ? new m(t.segments, {}) : r.match && !t.hasChildren() ? Ft(t, n, e) : r.match ? Oe(t, 0, i) : Ft(t, n, e); }
+function Oe(t, n, e) { if (e.length === 0)
     return new m(t.segments, {}); {
-    let r = Oi(e), i = {};
+    let r = Ui(e), i = {};
     if (Object.keys(r).some(o => o !== p) && t.children[p] && t.numberOfChildren === 1 && t.children[p].segments.length === 0) {
-        let o = Ue(t.children[p], n, e);
+        let o = Oe(t.children[p], n, e);
         return new m(t.segments, o.children);
     }
     return Object.entries(r).forEach(([o, s]) => { typeof s == "string" && (s = [s]), s !== null && (i[o] = Qr(t.children[o], n, s)); }), Object.entries(t.children).forEach(([o, s]) => { r[o] === void 0 && (i[o] = s); }), new m(t.segments, i);
 } }
-function Ui(t, n, e) { let r = 0, i = n, o = { match: !1, pathIndex: 0, commandIndex: 0 }; for (; i < t.segments.length;) {
+function Oi(t, n, e) { let r = 0, i = n, o = { match: !1, pathIndex: 0, commandIndex: 0 }; for (; i < t.segments.length;) {
     if (r >= e.length)
         return o;
     let s = t.segments[i], a = e[r];
@@ -318,7 +319,7 @@ var ye = "imperative", w = (function (t) { return t[t.NavigationStart = 0] = "Na
     restoredState;
     constructor(n, e, r = "imperative", i = null) { super(n, e), this.navigationTrigger = r, this.restoredState = i; }
     toString() { return `NavigationStart(id: ${this.id}, url: '${this.url}')`; }
-}, N = class extends P {
+}, D = class extends P {
     urlAfterRedirects;
     type = w.NavigationEnd;
     constructor(n, e, r) { super(n, e), this.urlAfterRedirects = r; }
@@ -461,7 +462,7 @@ function Ht(t, n) { if (t === n.value)
     if (r.length)
         return r.unshift(n), r;
 } return []; }
-var U = class {
+var O = class {
     value;
     children;
     constructor(n, e) { this.value = n, this.children = e; }
@@ -473,8 +474,8 @@ var ze = class extends vt {
     constructor(n, e) { super(n), this.snapshot = e, or(this, n); }
     toString() { return this.snapshot.toString(); }
 };
-function Kr(t, n) { let e = xi(t, n), r = new z([new ee("", {})]), i = new z({}), o = new z({}), s = new z({}), a = new z(""), c = new Q(r, i, s, a, o, p, t, e.root); return c.snapshot = e.root, new ze(new U(c, []), e); }
-function xi(t, n) { let e = {}, r = {}, i = {}, s = new Ie([], e, i, "", r, p, t, null, {}, n); return new Fe("", new U(s, [])); }
+function Kr(t, n) { let e = xi(t, n), r = new z([new ee("", {})]), i = new z({}), o = new z({}), s = new z({}), a = new z(""), c = new Q(r, i, s, a, o, p, t, e.root); return c.snapshot = e.root, new ze(new O(c, []), e); }
+function xi(t, n) { let e = {}, r = {}, i = {}, s = new Ie([], e, i, "", r, p, t, null, {}, n); return new Fe("", new O(s, [])); }
 var Q = class {
     urlSubject;
     paramsSubject;
@@ -494,15 +495,15 @@ var Q = class {
     queryParams;
     fragment;
     data;
-    constructor(n, e, r, i, o, s, a, c) { this.urlSubject = n, this.paramsSubject = e, this.queryParamsSubject = r, this.fragmentSubject = i, this.dataSubject = o, this.outlet = s, this.component = a, this._futureSnapshot = c, this.title = this.dataSubject?.pipe(D(u => u[Be])) ?? v(void 0), this.url = n, this.params = e, this.queryParams = r, this.fragment = i, this.data = o; }
+    constructor(n, e, r, i, o, s, a, c) { this.urlSubject = n, this.paramsSubject = e, this.queryParamsSubject = r, this.fragmentSubject = i, this.dataSubject = o, this.outlet = s, this.component = a, this._futureSnapshot = c, this.title = this.dataSubject?.pipe(N(u => u[Be])) ?? v(void 0), this.url = n, this.params = e, this.queryParams = r, this.fragment = i, this.data = o; }
     get routeConfig() { return this._futureSnapshot.routeConfig; }
     get root() { return this._routerState.root; }
     get parent() { return this._routerState.parent(this); }
     get firstChild() { return this._routerState.firstChild(this); }
     get children() { return this._routerState.children(this); }
     get pathFromRoot() { return this._routerState.pathFromRoot(this); }
-    get paramMap() { return this._paramMap ??= this.params.pipe(D(n => le(n))), this._paramMap; }
-    get queryParamMap() { return this._queryParamMap ??= this.queryParams.pipe(D(n => le(n))), this._queryParamMap; }
+    get paramMap() { return this._paramMap ??= this.params.pipe(N(n => le(n))), this._paramMap; }
+    get queryParamMap() { return this._queryParamMap ??= this.queryParams.pipe(N(n => le(n))), this._queryParamMap; }
     toString() { return this.snapshot ? this.snapshot.toString() : `Future(${this._futureSnapshot})`; }
 };
 function ir(t, n, e = "emptyOnly") { let r, { routeConfig: i } = t; return n !== null && (e === "always" || i?.path === "" || !n.component && !n.routeConfig?.loadComponent) ? r = { params: l(l({}, n.params), t.params), data: l(l({}, n.data), t.data), resolve: l(l(l(l({}, t.data), n.data), i?.data), t._resolvedData) } : r = { params: l({}, t.params), data: l({}, t.data), resolve: l(l({}, t.data), t._resolvedData ?? {}) }, i && Zr(i) && (r.resolve[Be] = i.title), r; }
@@ -538,7 +539,7 @@ var Ie = class {
 };
 function or(t, n) { n.value._routerState = t, n.children.forEach(e => or(t, e)); }
 function Yr(t) { let n = t.children.length > 0 ? ` { ${t.children.map(Yr).join(", ")} } ` : ""; return `${t.value}${n}`; }
-function Ut(t) { if (t.snapshot) {
+function Ot(t) { if (t.snapshot) {
     let n = t.snapshot, e = t._futureSnapshot;
     t.snapshot = e, W(n.queryParams, e.queryParams) || t.queryParamsSubject.next(e.queryParams), n.fragment !== e.fragment && t.fragmentSubject.next(e.fragment), W(n.params, e.params) || t.paramsSubject.next(e.params), li(n.url, e.url) || t.urlSubject.next(e.url), W(n.data, e.data) || t.dataSubject.next(e.data);
 }
@@ -620,7 +621,7 @@ function qe(t, n, e) { if (e && t.shouldReuseRoute(n.value, e.value.snapshot)) {
     let r = e.value;
     r._futureSnapshot = n.value;
     let i = ki(t, n, e);
-    return new U(r, i);
+    return new O(r, i);
 }
 else {
     if (t.shouldAttach(n.value)) {
@@ -631,7 +632,7 @@ else {
         }
     }
     let r = $i(n.value), i = n.children.map(o => qe(t, o));
-    return new U(r, i);
+    return new O(r, i);
 } }
 function ki(t, n, e) { return n.children.map(r => { for (let i of e.children)
     if (t.shouldReuseRoute(r.value, i.value.snapshot))
@@ -653,7 +654,7 @@ var Gt = class {
     forwardEvent;
     inputBindingEnabled;
     constructor(n, e, r, i, o) { this.routeReuseStrategy = n, this.futureState = e, this.currState = r, this.forwardEvent = i, this.inputBindingEnabled = o; }
-    activate(n) { let e = this.futureState._root, r = this.currState ? this.currState._root : null; this.deactivateChildRoutes(e, r, n), Ut(this.futureState.root), this.activateChildRoutes(e, r, n); }
+    activate(n) { let e = this.futureState._root, r = this.currState ? this.currState._root : null; this.deactivateChildRoutes(e, r, n), Ot(this.futureState.root), this.activateChildRoutes(e, r, n); }
     deactivateChildRoutes(n, e, r) { let i = ve(e); n.children.forEach(o => { let s = o.value.outlet; this.deactivateRoutes(o, i[s], r), delete i[s]; }), Object.values(i).forEach(o => { this.deactivateRouteAndItsChildren(o, r); }); }
     deactivateRoutes(n, e, r) { let i = n.value, o = e ? e.value : null; if (i === o)
         if (i.component) {
@@ -673,7 +674,7 @@ var Gt = class {
     deactivateRouteAndOutlet(n, e) { let r = e.getContext(n.value.outlet), i = r && n.value.component ? r.children : e, o = ve(n); for (let s of Object.values(o))
         this.deactivateRouteAndItsChildren(s, i); r && (r.outlet && (r.outlet.deactivate(), r.children.onOutletDeactivated()), r.attachRef = null, r.route = null); }
     activateChildRoutes(n, e, r) { let i = ve(e); n.children.forEach(o => { this.activateRoutes(o, i[o.value.outlet], r), this.forwardEvent(new pt(o.value.snapshot)); }), n.children.length && this.forwardEvent(new ht(n.value.snapshot)); }
-    activateRoutes(n, e, r) { let i = n.value, o = e ? e.value : null; if (Ut(i), i === o)
+    activateRoutes(n, e, r) { let i = n.value, o = e ? e.value : null; if (Ot(i), i === o)
         if (i.component) {
             let s = r.getOrCreateContext(i.outlet);
             this.activateChildRoutes(n, e, s.children);
@@ -684,7 +685,7 @@ var Gt = class {
         let s = r.getOrCreateContext(i.outlet);
         if (this.routeReuseStrategy.shouldAttach(i.snapshot)) {
             let a = this.routeReuseStrategy.retrieve(i.snapshot);
-            this.routeReuseStrategy.store(i.snapshot, null), s.children.onOutletReAttached(a.contexts), s.attachRef = a.componentRef, s.route = a.route.value, s.outlet && s.outlet.attach(a.componentRef, a.route.value), Ut(a.route.value), this.activateChildRoutes(n, null, s.children);
+            this.routeReuseStrategy.store(i.snapshot, null), s.children.onOutletReAttached(a.contexts), s.attachRef = a.componentRef, s.route = a.route.value, s.outlet && s.outlet.attach(a.componentRef, a.route.value), Ot(a.route.value), this.activateChildRoutes(n, null, s.children);
         }
         else
             s.attachRef = null, s.route = i, s.outlet && s.outlet.activateWith(i, s.injector), this.activateChildRoutes(n, null, s.children);
@@ -728,7 +729,7 @@ function Ki(t) { return t && Ge(t.canDeactivate); }
 function Yi(t) { return t && Ge(t.canMatch); }
 function rn(t) { return t instanceof ri || t?.name === "EmptyError"; }
 var Je = Symbol("INITIAL_VALUE");
-function Ae() { return B(t => Tr(t.map(n => n.pipe(Le(1), ci(Je)))).pipe(D(n => { for (let e of n)
+function Ae() { return B(t => Tr(t.map(n => n.pipe(Le(1), ci(Je)))).pipe(N(n => { for (let e of n)
     if (e !== !0) {
         if (e === Je)
             return Je;
@@ -738,9 +739,9 @@ function Ae() { return B(t => Tr(t.map(n => n.pipe(Le(1), ci(Je)))).pipe(D(n => 
 function Zi(t) { return te(t) || t instanceof Ee; }
 function nn(t) { return t.aborted ? v(void 0).pipe(Le(1)) : new ni(n => { let e = () => { n.next(), n.complete(); }; return t.addEventListener("abort", e), () => t.removeEventListener("abort", e); }); }
 function on(t) { return Lt(nn(t)); }
-function Ji(t) { return ue(n => { let { targetSnapshot: e, currentSnapshot: r, guards: { canActivateChecks: i, canDeactivateChecks: o } } = n; return o.length === 0 && i.length === 0 ? v(E(l({}, n), { guardsResult: !0 })) : Xi(o, e, r).pipe(ue(s => s && Vi(s) ? eo(e, i, t) : v(s)), D(s => E(l({}, n), { guardsResult: s }))); }); }
+function Ji(t) { return ue(n => { let { targetSnapshot: e, currentSnapshot: r, guards: { canActivateChecks: i, canDeactivateChecks: o } } = n; return o.length === 0 && i.length === 0 ? v(E(l({}, n), { guardsResult: !0 })) : Xi(o, e, r).pipe(ue(s => s && Vi(s) ? eo(e, i, t) : v(s)), N(s => E(l({}, n), { guardsResult: s }))); }); }
 function Xi(t, n, e) { return G(t).pipe(ue(r => oo(r.component, r.route, e, n)), he(r => r !== !0, !0)); }
-function eo(t, n, e) { return G(n).pipe(Dr(r => ii(ro(r.route.parent, e), to(r.route, e), io(t, r.path), no(t, r.route))), he(r => r !== !0, !0)); }
+function eo(t, n, e) { return G(n).pipe(Nr(r => ii(ro(r.route.parent, e), to(r.route, e), io(t, r.path), no(t, r.route))), he(r => r !== !0, !0)); }
 function to(t, n) { return t !== null && n && n(new ft(t)), v(!0); }
 function ro(t, n) { return t !== null && n && n(new dt(t)), v(!0); }
 function no(t, n) { let e = n.routeConfig ? n.routeConfig.canActivate : null; if (!e || e.length === 0)
@@ -751,7 +752,7 @@ function oo(t, n, e, r) { let i = n && n.routeConfig ? n.routeConfig.canDeactiva
 function ao(t, n, e, r, i) { let o = n.canLoad; if (o === void 0 || o.length === 0)
     return v(!0); let s = o.map(a => { let c = Me(a, t), u = Gi(c) ? c.canLoad(n, e) : L(t, () => c(n, e)), h = fe(u); return i ? h.pipe(on(i)) : h; }); return v(s).pipe(Ae(), an(r)); }
 function an(t) { return oi(V(n => { if (typeof n != "boolean")
-    throw mt(t, n); }), D(n => n === !0)); }
+    throw mt(t, n); }), N(n => n === !0)); }
 function so(t, n, e, r, i, o) { let s = n.canMatch; if (!s || s.length === 0)
     return v(!0); let a = s.map(c => { let u = Me(c, t), h = Yi(u) ? u.canMatch(n, e, i) : L(t, () => u(n, e, i)); return fe(h).pipe(on(o)); }); return v(a).pipe(Ae(), an(r)); }
 var Y = class t extends Error {
@@ -802,9 +803,9 @@ function fo(t, n) { let e = t.filter(r => F(r) === n); return e.push(...t.filter
 var Qt = { matched: !1, consumedSegments: [], remainingSegments: [], parameters: {}, positionalParamSegments: {} };
 function sn(t) { return { routeConfig: t.routeConfig, url: t.url, params: t.params, queryParams: t.queryParams, fragment: t.fragment, data: t.data, outlet: t.outlet, title: t.title, paramMap: t.paramMap, queryParamMap: t.queryParamMap }; }
 function po(t, n, e, r, i, o, s) { let a = cn(t, n, e); if (!a.matched)
-    return v(a); let c = sn(o(a)); return r = ho(n, r), so(r, n, e, i, c, s).pipe(D(u => u === !0 ? a : l({}, Qt))); }
+    return v(a); let c = sn(o(a)); return r = ho(n, r), so(r, n, e, i, c, s).pipe(N(u => u === !0 ? a : l({}, Qt))); }
 function cn(t, n, e) { if (n.path === "")
-    return n.pathMatch === "full" && (t.hasChildren() || e.length > 0) ? l({}, Qt) : { matched: !0, consumedSegments: [], remainingSegments: e, parameters: {}, positionalParamSegments: {} }; let i = (n.matcher || Ur)(e, t, n); if (!i)
+    return n.pathMatch === "full" && (t.hasChildren() || e.length > 0) ? l({}, Qt) : { matched: !0, consumedSegments: [], remainingSegments: e, parameters: {}, positionalParamSegments: {} }; let i = (n.matcher || Or)(e, t, n); if (!i)
     return l({}, Qt); let o = {}; Object.entries(i.posParams ?? {}).forEach(([a, c]) => { o[a] = c.path; }); let s = i.consumed.length > 0 ? l(l({}, o), i.consumed[i.consumed.length - 1].parameters) : o; return { matched: !0, consumedSegments: i.consumed, remainingSegments: e.slice(i.consumed.length), parameters: s, positionalParamSegments: i.posParams ?? {} }; }
 function Er(t, n, e, r, i) { return e.length > 0 && mo(t, e, r, i) ? { segmentGroup: new m(n, vo(r, new m(e, t.children))), slicedSegments: [] } : e.length === 0 && yo(t, e, r) ? { segmentGroup: new m(t.segments, go(t, e, r, t.children)), slicedSegments: e } : { segmentGroup: new m(t.segments, t.children), slicedSegments: e }; }
 function go(t, n, e, r) { let i = {}; for (let o of e)
@@ -838,7 +839,7 @@ var So = 31, Yt = class {
     allowRedirects = !0;
     constructor(n, e, r, i, o, s, a, c) { this.injector = n, this.configLoader = e, this.rootComponentType = r, this.config = i, this.urlTree = o, this.paramsInheritanceStrategy = s, this.urlSerializer = a, this.abortSignal = c, this.applyRedirects = new Wt(this.urlSerializer, this.urlTree); }
     noMatchError(n) { return new A(4002, `'${n.segmentGroup}'`); }
-    recognize() { return R(this, null, function* () { let n = Er(this.urlTree.root, [], [], this.config).segmentGroup, { children: e, rootSnapshot: r } = yield this.match(n), i = new U(r, e), o = new Fe("", i), s = Br(r, [], this.urlTree.queryParams, this.urlTree.fragment); return s.queryParams = this.urlTree.queryParams, o.url = this.urlSerializer.serialize(s), { state: o, tree: s }; }); }
+    recognize() { return R(this, null, function* () { let n = Er(this.urlTree.root, [], [], this.config).segmentGroup, { children: e, rootSnapshot: r } = yield this.match(n), i = new O(r, e), o = new Fe("", i), s = Br(r, [], this.urlTree.queryParams, this.urlTree.fragment); return s.queryParams = this.urlTree.queryParams, o.url = this.urlSerializer.serialize(s), { state: o, tree: s }; }); }
     match(n) { return R(this, null, function* () { let e = new Ie([], Object.freeze({}), Object.freeze(l({}, this.urlTree.queryParams)), this.urlTree.fragment, Object.freeze({}), p, this.rootComponentType, null, {}, this.injector); try {
         return { children: yield this.processSegmentGroup(this.injector, this.config, n, p, e), rootSnapshot: e };
     }
@@ -848,7 +849,7 @@ var So = 31, Yt = class {
         throw r instanceof Y ? this.noMatchError(r) : r;
     } }); }
     processSegmentGroup(n, e, r, i, o) { return R(this, null, function* () { if (r.segments.length === 0 && r.hasChildren())
-        return this.processChildren(n, e, r, o); let s = yield this.processSegment(n, e, r, r.segments, i, !0, o); return s instanceof U ? [s] : []; }); }
+        return this.processChildren(n, e, r, o); let s = yield this.processSegment(n, e, r, r.segments, i, !0, o); return s instanceof O ? [s] : []; }); }
     processChildren(n, e, r, i) { return R(this, null, function* () { let o = []; for (let c of Object.keys(r.children))
         c === "primary" ? o.unshift(c) : o.push(c); let s = []; for (let c of o) {
         let u = r.children[c], h = fo(e, c), f = yield this.processSegmentGroup(n, h, u, c, i);
@@ -876,9 +877,9 @@ var So = 31, Yt = class {
         throw new Error(this.abortSignal.reason); let a = ge => this.createSnapshot(n, r, ge.consumedSegments, ge.parameters, s), c = yield rt(po(e, r, i, n, this.urlSerializer, a, this.abortSignal)); if (r.path === "**" && (e.children = {}), !c?.matched)
         throw new Y(e); n = r._injector ?? n; let { routes: u } = yield this.getChildConfig(n, r, i), h = r._loadedInjector ?? n, { parameters: f, consumedSegments: S, remainingSegments: K } = c, j = this.createSnapshot(n, r, S, f, s), { segmentGroup: I, slicedSegments: k } = Er(e, S, K, u, o); if (k.length === 0 && I.hasChildren()) {
         let ge = yield this.processChildren(h, u, I, j);
-        return new U(j, ge);
+        return new O(j, ge);
     } if (u.length === 0 && k.length === 0)
-        return new U(j, []); let De = F(r) === o, se = yield this.processSegment(h, u, I, k, De ? p : o, !0, j); return new U(j, se instanceof U ? [se] : []); }); }
+        return new O(j, []); let Ne = F(r) === o, se = yield this.processSegment(h, u, I, k, Ne ? p : o, !0, j); return new O(j, se instanceof O ? [se] : []); }); }
     getChildConfig(n, e, r) { return R(this, null, function* () { if (e.children)
         return { routes: e.children, injector: n }; if (e.loadChildren) {
         if (e._loadedRoutes !== void 0) {
@@ -905,7 +906,7 @@ function un(t) { let n = [], e = new Set; for (let r of t) {
     i !== void 0 ? (i.children.push(...r.children), e.add(i)) : n.push(r);
 } for (let r of e) {
     let i = un(r.children);
-    n.push(new U(r.value, i));
+    n.push(new O(r.value, i));
 } return n.filter(r => !e.has(r)); }
 function Io(t) { return t.data || {}; }
 function Eo(t) { return t.resolve || {}; }
@@ -914,14 +915,14 @@ function Mo(t) { return ue(n => { let { targetSnapshot: e, guards: { canActivate
     return v(n); let i = new Set(r.map(a => a.route)), o = new Set; for (let a of i)
     if (!o.has(a))
         for (let c of ln(a))
-            o.add(c); let s = 0; return G(o).pipe(Dr(a => i.has(a) ? To(a, e, t) : (a.data = ir(a, a.parent, t).resolve, v(void 0))), V(() => s++), Nr(1), ue(a => s === o.size ? v(n) : $)); }); }
+            o.add(c); let s = 0; return G(o).pipe(Nr(a => i.has(a) ? To(a, e, t) : (a.data = ir(a, a.parent, t).resolve, v(void 0))), V(() => s++), Dr(1), ue(a => s === o.size ? v(n) : $)); }); }
 function ln(t) { let n = t.children.map(e => ln(e)).flat(); return [t, ...n]; }
-function To(t, n, e) { let r = t.routeConfig, i = t._resolve; return r?.title !== void 0 && !Zr(r) && (i[Be] = r.title), er(() => (t.data = ir(t, t.parent, e).resolve, Do(i, t, n).pipe(D(o => (t._resolvedData = o, t.data = l(l({}, t.data), o), null))))); }
-function Do(t, n, e) { let r = jt(t); if (r.length === 0)
-    return v({}); let i = {}; return G(r).pipe(ue(o => No(t[o], n, e).pipe(he(), V(s => { if (s instanceof Ee)
-    throw mt(new Z, s); i[o] = s; }))), Nr(1), D(() => i), _r(o => rn(o) ? $ : ai(o))); }
-function No(t, n, e) { let r = n._environmentInjector, i = Me(t, r), o = i.resolve ? i.resolve(n, e) : L(r, () => i(n, e)); return fe(o); }
-function Ar(t) { return B(n => { let e = t(n); return e ? G(e).pipe(D(() => n)) : v(n); }); }
+function To(t, n, e) { let r = t.routeConfig, i = t._resolve; return r?.title !== void 0 && !Zr(r) && (i[Be] = r.title), er(() => (t.data = ir(t, t.parent, e).resolve, No(i, t, n).pipe(N(o => (t._resolvedData = o, t.data = l(l({}, t.data), o), null))))); }
+function No(t, n, e) { let r = jt(t); if (r.length === 0)
+    return v({}); let i = {}; return G(r).pipe(ue(o => Do(t[o], n, e).pipe(he(), V(s => { if (s instanceof Ee)
+    throw mt(new Z, s); i[o] = s; }))), Dr(1), N(() => i), _r(o => rn(o) ? $ : ai(o))); }
+function Do(t, n, e) { let r = n._environmentInjector, i = Me(t, r), o = i.resolve ? i.resolve(n, e) : L(r, () => i(n, e)); return fe(o); }
+function Ar(t) { return B(n => { let e = t(n); return e ? G(e).pipe(N(() => n)) : v(n); }); }
 var lr = (() => { class t {
     buildTitle(e) { let r, i = e.root; for (; i !== void 0;)
         r = this.getResolvedTitleForRoute(i) ?? r, i = i.children.find(o => o.outlet === p); return r; }
@@ -932,7 +933,7 @@ var lr = (() => { class t {
     title;
     constructor(e) { super(), this.title = e; }
     updateTitle(e) { let r = this.buildTitle(e); r !== void 0 && this.title.setTitle(r); }
-    static \u0275fac = function (r) { return new (r || t)(y.\u0275\u0275inject(Or.Title)); };
+    static \u0275fac = function (r) { return new (r || t)(y.\u0275\u0275inject(Ur.Title)); };
     static \u0275prov = y.\u0275\u0275defineInjectable({ token: t, factory: t.\u0275fac, providedIn: "root" });
 } return t; })(), X = new ne("", { factory: () => ({}) }), oe = new ne(""), St = (() => { class t {
     componentLoaders = new WeakMap;
@@ -967,8 +968,8 @@ function fn(t) { return _o(t) ? t.default : t; }
 function pn(t) { return R(this, null, function* () { return t; }); }
 var wt = (() => { class t {
     static \u0275fac = function (r) { return new (r || t); };
-    static \u0275prov = y.\u0275\u0275defineInjectable({ token: t, factory: () => g(Oo), providedIn: "root" });
-} return t; })(), Oo = (() => { class t {
+    static \u0275prov = y.\u0275\u0275defineInjectable({ token: t, factory: () => g(Uo), providedIn: "root" });
+} return t; })(), Uo = (() => { class t {
     shouldProcessUrl(e) { return !0; }
     extract(e) { return e; }
     merge(e, r) { return e; }
@@ -976,8 +977,8 @@ var wt = (() => { class t {
     static \u0275prov = y.\u0275\u0275defineInjectable({ token: t, factory: t.\u0275fac, providedIn: "root" });
 } return t; })(), dr = new ne(""), hr = new ne("");
 function gn(t, n, e) { let r = t.get(hr), i = t.get($n); if (!i.startViewTransition || r.skipNextTransition)
-    return r.skipNextTransition = !1, new Promise(u => setTimeout(u)); let o, s = new Promise(u => { o = u; }), a = i.startViewTransition(() => (o(), Uo(t))); a.updateCallbackDone.catch(u => { }), a.ready.catch(u => { }), a.finished.catch(u => { }); let { onViewTransitionCreated: c } = r; return c && L(t, () => c({ transition: a, from: n, to: e })), s; }
-function Uo(t) { return new Promise(n => { Yn({ read: () => setTimeout(n) }, { injector: t }); }); }
+    return r.skipNextTransition = !1, new Promise(u => setTimeout(u)); let o, s = new Promise(u => { o = u; }), a = i.startViewTransition(() => (o(), Oo(t))); a.updateCallbackDone.catch(u => { }), a.ready.catch(u => { }), a.finished.catch(u => { }); let { onViewTransitionCreated: c } = r; return c && L(t, () => c({ transition: a, from: n, to: e })), s; }
+function Oo(t) { return new Promise(n => { Yn({ read: () => setTimeout(n) }, { injector: t }); }); }
 var Po = () => { }, bt = new ne(""), It = (() => { class t {
     currentNavigation = Cr(null, { equal: () => !1 });
     currentTransition = null;
@@ -1005,18 +1006,18 @@ var Po = () => { }, bt = new ne(""), It = (() => { class t {
     destroyed = !1;
     constructor() { let e = i => this.events.next(new ut(i)), r = i => this.events.next(new lt(i)); this.configLoader.onLoadEndListener = r, this.configLoader.onLoadStartListener = e, this.destroyRef.onDestroy(() => { this.destroyed = !0; }); }
     complete() { this.transitions?.complete(); }
-    handleNavigationRequest(e) { let r = ++this.navigationId; Oe(() => { this.transitions?.next(E(l({}, e), { extractedUrl: this.urlHandlingStrategy.extract(e.rawUrl), targetSnapshot: null, targetRouterState: null, guards: { canActivateChecks: [], canDeactivateChecks: [] }, guardsResult: null, id: r, routesRecognizeHandler: {}, beforeActivateHandler: {} })); }); }
+    handleNavigationRequest(e) { let r = ++this.navigationId; Ue(() => { this.transitions?.next(E(l({}, e), { extractedUrl: this.urlHandlingStrategy.extract(e.rawUrl), targetSnapshot: null, targetRouterState: null, guards: { canActivateChecks: [], canDeactivateChecks: [] }, guardsResult: null, id: r, routesRecognizeHandler: {}, beforeActivateHandler: {} })); }); }
     setupNavigations(e) { return this.transitions = new z(null), this.transitions.pipe(xe(r => r !== null), B(r => { let i = !1, o = new AbortController, s = () => !i && this.currentTransition?.id === r.id; return v(r).pipe(B(a => { if (this.navigationId > r.id)
         return this.cancelNavigationTransition(r, "", b.SupersededByNewNavigation), $; this.currentTransition = r; let c = this.lastSuccessfulNavigation(); this.currentNavigation.set({ id: a.id, initialUrl: a.rawUrl, extractedUrl: a.extractedUrl, targetBrowserUrl: typeof a.extras.browserUrl == "string" ? this.urlSerializer.parse(a.extras.browserUrl) : a.extras.browserUrl, trigger: a.source, extras: a.extras, previousNavigation: c ? E(l({}, c), { previousNavigation: null }) : null, abort: () => o.abort(), routesRecognizeHandler: a.routesRecognizeHandler, beforeActivateHandler: a.beforeActivateHandler }); let u = !e.navigated || this.isUpdatingInternalState() || this.isUpdatedBrowserUrl(), h = a.extras.onSameUrlNavigation ?? e.onSameUrlNavigation; if (!u && h !== "reload")
         return this.events.next(new q(a.id, this.urlSerializer.serialize(a.rawUrl), "", Ce.IgnoredSameUrlNavigation)), a.resolve(!1), $; if (this.urlHandlingStrategy.shouldProcessUrl(a.rawUrl))
-        return v(a).pipe(B(f => (this.events.next(new J(f.id, this.urlSerializer.serialize(f.extractedUrl), f.source, f.restoredState)), f.id !== this.navigationId ? $ : Promise.resolve(f))), Ao(this.environmentInjector, this.configLoader, this.rootComponentType, e.config, this.urlSerializer, this.paramsInheritanceStrategy, o.signal), V(f => { r.targetSnapshot = f.targetSnapshot, r.urlAfterRedirects = f.urlAfterRedirects, this.currentNavigation.update(S => (S.finalUrl = f.urlAfterRedirects, S)), this.events.next(new we); }), B(f => G(r.routesRecognizeHandler.deferredHandle ?? v(void 0)).pipe(D(() => f))), V(() => { let f = new $e(a.id, this.urlSerializer.serialize(a.extractedUrl), this.urlSerializer.serialize(a.urlAfterRedirects), a.targetSnapshot); this.events.next(f); })); if (u && this.urlHandlingStrategy.shouldProcessUrl(a.currentRawUrl)) {
+        return v(a).pipe(B(f => (this.events.next(new J(f.id, this.urlSerializer.serialize(f.extractedUrl), f.source, f.restoredState)), f.id !== this.navigationId ? $ : Promise.resolve(f))), Ao(this.environmentInjector, this.configLoader, this.rootComponentType, e.config, this.urlSerializer, this.paramsInheritanceStrategy, o.signal), V(f => { r.targetSnapshot = f.targetSnapshot, r.urlAfterRedirects = f.urlAfterRedirects, this.currentNavigation.update(S => (S.finalUrl = f.urlAfterRedirects, S)), this.events.next(new we); }), B(f => G(r.routesRecognizeHandler.deferredHandle ?? v(void 0)).pipe(N(() => f))), V(() => { let f = new $e(a.id, this.urlSerializer.serialize(a.extractedUrl), this.urlSerializer.serialize(a.urlAfterRedirects), a.targetSnapshot); this.events.next(f); })); if (u && this.urlHandlingStrategy.shouldProcessUrl(a.currentRawUrl)) {
         let { id: f, extractedUrl: S, source: K, restoredState: j, extras: I } = a, k = new J(f, this.urlSerializer.serialize(S), K, j);
         this.events.next(k);
-        let De = Kr(this.rootComponentType, this.environmentInjector).snapshot;
-        return this.currentTransition = r = E(l({}, a), { targetSnapshot: De, urlAfterRedirects: S, extras: E(l({}, I), { skipLocationChange: !1, replaceUrl: !1 }) }), this.currentNavigation.update(se => (se.finalUrl = S, se)), v(r);
+        let Ne = Kr(this.rootComponentType, this.environmentInjector).snapshot;
+        return this.currentTransition = r = E(l({}, a), { targetSnapshot: Ne, urlAfterRedirects: S, extras: E(l({}, I), { skipLocationChange: !1, replaceUrl: !1 }) }), this.currentNavigation.update(se => (se.finalUrl = S, se)), v(r);
     }
     else
-        return this.events.next(new q(a.id, this.urlSerializer.serialize(a.extractedUrl), "", Ce.IgnoredByUrlHandlingStrategy)), a.resolve(!1), $; }), D(a => { let c = new ot(a.id, this.urlSerializer.serialize(a.extractedUrl), this.urlSerializer.serialize(a.urlAfterRedirects), a.targetSnapshot); return this.events.next(c), this.currentTransition = r = E(l({}, a), { guards: Fi(a.targetSnapshot, a.currentSnapshot, this.rootContexts) }), r; }), Ji(a => this.events.next(a)), B(a => { if (r.guardsResult = a.guardsResult, a.guardsResult && typeof a.guardsResult != "boolean")
+        return this.events.next(new q(a.id, this.urlSerializer.serialize(a.extractedUrl), "", Ce.IgnoredByUrlHandlingStrategy)), a.resolve(!1), $; }), N(a => { let c = new ot(a.id, this.urlSerializer.serialize(a.extractedUrl), this.urlSerializer.serialize(a.urlAfterRedirects), a.targetSnapshot); return this.events.next(c), this.currentTransition = r = E(l({}, a), { guards: Fi(a.targetSnapshot, a.currentSnapshot, this.rootContexts) }), r; }), Ji(a => this.events.next(a)), B(a => { if (r.guardsResult = a.guardsResult, a.guardsResult && typeof a.guardsResult != "boolean")
         throw mt(this.urlSerializer, a.guardsResult); let c = new at(a.id, this.urlSerializer.serialize(a.extractedUrl), this.urlSerializer.serialize(a.urlAfterRedirects), a.targetSnapshot, !!a.guardsResult); if (this.events.next(c), !s())
         return $; if (!a.guardsResult)
         return this.cancelNavigationTransition(a, "", b.GuardRejected), $; if (a.guards.canActivateChecks.length === 0)
@@ -1027,7 +1028,7 @@ var Po = () => { }, bt = new ne(""), It = (() => { class t {
         let S = h._environmentInjector;
         f.push(this.configLoader.loadComponent(S, h.routeConfig).then(K => { h.component = K; }));
     } for (let S of h.children)
-        f.push(...c(S)); return f; }, u = c(a.targetSnapshot.root); return u.length === 0 ? v(a) : G(Promise.all(u).then(() => a)); }), Ar(() => this.afterPreactivation()), B(() => { let { currentSnapshot: a, targetSnapshot: c } = r, u = this.createViewTransition?.(this.environmentInjector, a.root, c.root); return u ? G(u).pipe(D(() => r)) : v(r); }), Le(1), B(a => { let c = ji(e.routeReuseStrategy, a.targetSnapshot, a.currentRouterState); this.currentTransition = r = a = E(l({}, a), { targetRouterState: c }), this.currentNavigation.update(h => (h.targetRouterState = c, h)), this.events.next(new de); let u = r.beforeActivateHandler.deferredHandle; return u ? G(u.then(() => a)) : v(a); }), V(a => { new Gt(e.routeReuseStrategy, r.targetRouterState, r.currentRouterState, c => this.events.next(c), this.inputBindingEnabled).activate(this.rootContexts), s() && (i = !0, this.currentNavigation.update(c => (c.abort = Po, c)), this.lastSuccessfulNavigation.set(Oe(this.currentNavigation)), this.events.next(new N(a.id, this.urlSerializer.serialize(a.extractedUrl), this.urlSerializer.serialize(a.urlAfterRedirects))), this.titleStrategy?.updateTitle(a.targetRouterState.snapshot), a.resolve(!0)); }), Lt(nn(o.signal).pipe(xe(() => !i && !r.targetRouterState), V(() => { this.cancelNavigationTransition(r, o.signal.reason + "", b.Aborted); }))), V({ complete: () => { i = !0; } }), Lt(this.transitionAbortWithErrorSubject.pipe(V(a => { throw a; }))), ui(() => { o.abort(), i || this.cancelNavigationTransition(r, "", b.SupersededByNewNavigation), this.currentTransition?.id === r.id && (this.currentNavigation.set(null), this.currentTransition = null); }), _r(a => { if (i = !0, this.destroyed)
+        f.push(...c(S)); return f; }, u = c(a.targetSnapshot.root); return u.length === 0 ? v(a) : G(Promise.all(u).then(() => a)); }), Ar(() => this.afterPreactivation()), B(() => { let { currentSnapshot: a, targetSnapshot: c } = r, u = this.createViewTransition?.(this.environmentInjector, a.root, c.root); return u ? G(u).pipe(N(() => r)) : v(r); }), Le(1), B(a => { let c = ji(e.routeReuseStrategy, a.targetSnapshot, a.currentRouterState); this.currentTransition = r = a = E(l({}, a), { targetRouterState: c }), this.currentNavigation.update(h => (h.targetRouterState = c, h)), this.events.next(new de); let u = r.beforeActivateHandler.deferredHandle; return u ? G(u.then(() => a)) : v(a); }), V(a => { new Gt(e.routeReuseStrategy, r.targetRouterState, r.currentRouterState, c => this.events.next(c), this.inputBindingEnabled).activate(this.rootContexts), s() && (i = !0, this.currentNavigation.update(c => (c.abort = Po, c)), this.lastSuccessfulNavigation.set(Ue(this.currentNavigation)), this.events.next(new D(a.id, this.urlSerializer.serialize(a.extractedUrl), this.urlSerializer.serialize(a.urlAfterRedirects))), this.titleStrategy?.updateTitle(a.targetRouterState.snapshot), a.resolve(!0)); }), Lt(nn(o.signal).pipe(xe(() => !i && !r.targetRouterState), V(() => { this.cancelNavigationTransition(r, o.signal.reason + "", b.Aborted); }))), V({ complete: () => { i = !0; } }), Lt(this.transitionAbortWithErrorSubject.pipe(V(a => { throw a; }))), ui(() => { o.abort(), i || this.cancelNavigationTransition(r, "", b.SupersededByNewNavigation), this.currentTransition?.id === r.id && (this.currentNavigation.set(null), this.currentTransition = null); }), _r(a => { if (i = !0, this.destroyed)
         return r.resolve(!1), $; if (tn(a))
         this.events.next(new M(r.id, this.urlSerializer.serialize(r.extractedUrl), a.message, a.cancellationCode)), zi(a) ? this.events.next(new be(a.url, a.navigationBehaviorOptions)) : r.resolve(!1);
     else {
@@ -1047,7 +1048,7 @@ var Po = () => { }, bt = new ne(""), It = (() => { class t {
     } return $; })); })); }
     cancelNavigationTransition(e, r, i) { let o = new M(e.id, this.urlSerializer.serialize(e.extractedUrl), r, i); this.events.next(o), e.resolve(!1); }
     isUpdatingInternalState() { return this.currentTransition?.extractedUrl.toString() !== this.currentTransition?.currentUrlTree.toString(); }
-    isUpdatedBrowserUrl() { let e = this.urlHandlingStrategy.extract(this.urlSerializer.parse(this.location.path(!0))), r = Oe(this.currentNavigation), i = r?.targetBrowserUrl ?? r?.extractedUrl; return e.toString() !== i?.toString() && !r?.extras.skipLocationChange; }
+    isUpdatedBrowserUrl() { let e = this.urlHandlingStrategy.extract(this.urlSerializer.parse(this.location.path(!0))), r = Ue(this.currentNavigation), i = r?.targetBrowserUrl ?? r?.extractedUrl; return e.toString() !== i?.toString() && !r?.extras.skipLocationChange; }
     static \u0275fac = function (r) { return new (r || t); };
     static \u0275prov = y.\u0275\u0275defineInjectable({ token: t, factory: t.\u0275fac, providedIn: "root" });
 } return t; })();
@@ -1091,6 +1092,7 @@ var yn = (() => { class t {
     rawUrlTree = this.currentUrlTree;
     getRawUrlTree() { return this.rawUrlTree; }
     createBrowserPath({ finalUrl: e, initialUrl: r, targetBrowserUrl: i }) { let o = e !== void 0 ? this.urlHandlingStrategy.merge(e, r) : r, s = i ?? o; return s instanceof T ? this.urlSerializer.serialize(s) : s; }
+    routerUrlState(e) { return e?.targetBrowserUrl === void 0 || e?.finalUrl === void 0 ? {} : { \u0275routerUrl: this.urlSerializer.serialize(e.finalUrl) }; }
     commitTransition({ targetRouterState: e, finalUrl: r, initialUrl: i }) { r && e ? (this.currentUrlTree = r, this.rawUrlTree = this.urlHandlingStrategy.merge(r, i), this.routerState = e) : this.rawUrlTree = i; }
     routerState = Kr(null, g(Xt));
     getRouterState() { return this.routerState; }
@@ -1106,14 +1108,14 @@ var yn = (() => { class t {
     lastSuccessfulId = -1;
     get browserPageId() { return this.canceledNavigationResolution !== "computed" ? this.currentPageId : this.restoredState()?.\u0275routerPageId ?? this.currentPageId; }
     registerNonRouterCurrentEntryChangeListener(e) { return this.location.subscribe(r => { r.type === "popstate" && setTimeout(() => { e(r.url, r.state, "popstate", { replaceUrl: !0 }); }); }); }
-    handleRouterEvent(e, r) { e instanceof J ? this.updateStateMemento() : e instanceof q ? this.commitTransition(r) : e instanceof $e ? this.urlUpdateStrategy === "eager" && (r.extras.skipLocationChange || this.setBrowserUrl(this.createBrowserPath(r), r)) : e instanceof de ? (this.commitTransition(r), this.urlUpdateStrategy === "deferred" && !r.extras.skipLocationChange && this.setBrowserUrl(this.createBrowserPath(r), r)) : e instanceof M && !nr(e) ? this.restoreHistory(r) : e instanceof re ? this.restoreHistory(r, !0) : e instanceof N && (this.lastSuccessfulId = e.id, this.currentPageId = this.browserPageId); }
-    setBrowserUrl(e, { extras: r, id: i }) { let { replaceUrl: o, state: s } = r; if (this.location.isCurrentPathEqualTo(e) || o) {
-        let a = this.browserPageId, c = l(l({}, s), this.generateNgRouterState(i, a));
-        this.location.replaceState(e, "", c);
+    handleRouterEvent(e, r) { e instanceof J ? this.updateStateMemento() : e instanceof q ? this.commitTransition(r) : e instanceof $e ? this.urlUpdateStrategy === "eager" && (r.extras.skipLocationChange || this.setBrowserUrl(this.createBrowserPath(r), r)) : e instanceof de ? (this.commitTransition(r), this.urlUpdateStrategy === "deferred" && !r.extras.skipLocationChange && this.setBrowserUrl(this.createBrowserPath(r), r)) : e instanceof M && !nr(e) ? this.restoreHistory(r) : e instanceof re ? this.restoreHistory(r, !0) : e instanceof D && (this.lastSuccessfulId = e.id, this.currentPageId = this.browserPageId); }
+    setBrowserUrl(e, r) { let { extras: i, id: o } = r, { replaceUrl: s, state: a } = i; if (this.location.isCurrentPathEqualTo(e) || s) {
+        let c = this.browserPageId, u = l(l({}, a), this.generateNgRouterState(o, c, r));
+        this.location.replaceState(e, "", u);
     }
     else {
-        let a = l(l({}, s), this.generateNgRouterState(i, this.browserPageId + 1));
-        this.location.go(e, "", a);
+        let c = l(l({}, a), this.generateNgRouterState(o, this.browserPageId + 1, r));
+        this.location.go(e, "", c);
     } }
     restoreHistory(e, r = !1) { if (this.canceledNavigationResolution === "computed") {
         let i = this.browserPageId, o = this.currentPageId - i;
@@ -1123,11 +1125,11 @@ var yn = (() => { class t {
         this.canceledNavigationResolution === "replace" && (r && this.resetInternalState(e), this.resetUrlToCurrentUrlTree()); }
     resetInternalState({ finalUrl: e }) { this.routerState = this.stateMemento.routerState, this.currentUrlTree = this.stateMemento.currentUrlTree, this.rawUrlTree = this.urlHandlingStrategy.merge(this.currentUrlTree, e ?? this.rawUrlTree); }
     resetUrlToCurrentUrlTree() { this.location.replaceState(this.urlSerializer.serialize(this.getRawUrlTree()), "", this.generateNgRouterState(this.lastSuccessfulId, this.currentPageId)); }
-    generateNgRouterState(e, r) { return this.canceledNavigationResolution === "computed" ? { navigationId: e, \u0275routerPageId: r } : { navigationId: e }; }
+    generateNgRouterState(e, r, i) { return this.canceledNavigationResolution === "computed" ? l({ navigationId: e, \u0275routerPageId: r }, this.routerUrlState(i)) : l({ navigationId: e }, this.routerUrlState(i)); }
     static \u0275fac = (() => { let e; return function (i) { return (e || (e = y.\u0275\u0275getInheritedFactory(t)))(i || t); }; })();
     static \u0275prov = y.\u0275\u0275defineInjectable({ token: t, factory: t.\u0275fac, providedIn: "root" });
 } return t; })();
-function Et(t, n) { t.events.pipe(xe(e => e instanceof N || e instanceof M || e instanceof re || e instanceof q), D(e => e instanceof N || e instanceof q ? 0 : (e instanceof M ? e.code === b.Redirect || e.code === b.SupersededByNewNavigation : !1) ? 2 : 1), xe(e => e !== 2), Le(1)).subscribe(() => { n(); }); }
+function Et(t, n) { t.events.pipe(xe(e => e instanceof D || e instanceof M || e instanceof re || e instanceof q), N(e => e instanceof D || e instanceof q ? 0 : (e instanceof M ? e.code === b.Redirect || e.code === b.SupersededByNewNavigation : !1) ? 2 : 1), xe(e => e !== 2), Le(1)).subscribe(() => { n(); }); }
 var H = (() => { class t {
     get currentUrlTree() { return this.stateManager.getCurrentUrlTree(); }
     get rawUrlTree() { return this.stateManager.getRawUrlTree(); }
@@ -1156,11 +1158,11 @@ var H = (() => { class t {
     constructor() { this.resetConfig(this.config), this.navigationTransitions.setupNavigations(this).subscribe({ error: e => { } }), this.subscribeToNavigationEvents(); }
     eventsSubscription = new si;
     subscribeToNavigationEvents() { let e = this.navigationTransitions.events.subscribe(r => { try {
-        let i = this.navigationTransitions.currentTransition, o = Oe(this.navigationTransitions.currentNavigation);
+        let i = this.navigationTransitions.currentTransition, o = Ue(this.navigationTransitions.currentNavigation);
         if (i !== null && o !== null) {
             if (this.stateManager.handleRouterEvent(r, o), r instanceof M && r.code !== b.Redirect && r.code !== b.SupersededByNewNavigation)
                 this.navigated = !0;
-            else if (r instanceof N)
+            else if (r instanceof D)
                 this.navigated = !0, this.injectorCleanup?.(this.routeReuseStrategy, this.routerState, this.config);
             else if (r instanceof be) {
                 let s = r.navigationBehaviorOptions, a = this.urlHandlingStrategy.merge(r.url, i.currentRawUrl), c = l({ scroll: i.extras.scroll, browserUrl: i.extras.browserUrl, info: i.extras.info, skipLocationChange: i.extras.skipLocationChange, replaceUrl: i.extras.replaceUrl || this.urlUpdateStrategy === "eager" || Lo(i.source) }, s);
@@ -1175,12 +1177,12 @@ var H = (() => { class t {
     resetRootComponentType(e) { this.routerState.root.component = e, this.navigationTransitions.rootComponentType = e; }
     initialNavigation() { this.setUpLocationChangeListener(), this.navigationTransitions.hasRequestedNavigation || this.navigateToSyncWithBrowser(this.location.path(!0), ye, this.stateManager.restoredState(), { replaceUrl: !0 }); }
     setUpLocationChangeListener() { this.nonRouterCurrentEntryChangeSubscription ??= this.stateManager.registerNonRouterCurrentEntryChangeListener((e, r, i, o) => { this.navigateToSyncWithBrowser(e, i, r, o); }); }
-    navigateToSyncWithBrowser(e, r, i, o) { let s = i?.navigationId ? i : null; if (i) {
-        let c = l({}, i);
-        delete c.navigationId, delete c.\u0275routerPageId, Object.keys(c).length !== 0 && (o.state = c);
-    } let a = this.parseUrl(e); this.scheduleNavigation(a, r, s, o).catch(c => { this.disposed || this.injector.get(ei)(c); }); }
+    navigateToSyncWithBrowser(e, r, i, o) { let s = i?.navigationId ? i : null, a = i?.\u0275routerUrl ?? e; if (i?.\u0275routerUrl && (o = E(l({}, o), { browserUrl: e })), i) {
+        let u = l({}, i);
+        delete u.navigationId, delete u.\u0275routerPageId, delete u.\u0275routerUrl, Object.keys(u).length !== 0 && (o.state = u);
+    } let c = this.parseUrl(a); this.scheduleNavigation(c, r, s, o).catch(u => { this.disposed || this.injector.get(ei)(u); }); }
     get url() { return this.serializeUrl(this.currentUrlTree); }
-    getCurrentNavigation() { return Oe(this.navigationTransitions.currentNavigation); }
+    getCurrentNavigation() { return Ue(this.navigationTransitions.currentNavigation); }
     get lastSuccessfulNavigation() { return this.navigationTransitions.lastSuccessfulNavigation; }
     resetConfig(e) { this.config = e.map(ur), this.navigated = !1; }
     ngOnDestroy() { this.dispose(); }
@@ -1223,17 +1225,17 @@ function $o(t) { for (let n = 0; n < t.length; n++)
 import * as Cn from "@angular/common";
 import { ViewportScroller as Sn, PlatformNavigation as zo, PlatformLocation as Fo, \u0275PRECOMMIT_HANDLER_SUPPORTED as qo, LOCATION_INITIALIZED as Ho, Location as wn, \u0275NavigationAdapterForLocation as Bo, HashLocationStrategy as bn, LocationStrategy as mr, PathLocationStrategy as Vo } from "@angular/common";
 import * as d from "@angular/core";
-import { inject as C, HostAttributeToken as Go, linkedSignal as Wo, untracked as _, signal as O, \u0275INTERNAL_APPLICATION_ERROR_HANDLER as Qo, \u0275RuntimeError as Ya, computed as Ko, booleanAttribute as pr, EventEmitter as Yo, createEnvironmentInjector as Zo, InjectionToken as Qe, NgZone as Jo, EnvironmentInjector as Xo, DestroyRef as ea, afterNextRender as ta, \u0275promiseWithResolvers as Rn, makeEnvironmentProviders as ra, APP_BOOTSTRAP_LISTENER as In, ENVIRONMENT_INITIALIZER as os, provideAppInitializer as En, \u0275IS_ENABLED_BLOCKING_INITIAL_NAVIGATION as na, Injector as An, \u0275performanceMarkFeature as ia, ApplicationRef as oa } from "@angular/core";
+import { inject as C, HostAttributeToken as Go, linkedSignal as Wo, untracked as _, signal as U, \u0275INTERNAL_APPLICATION_ERROR_HANDLER as Qo, \u0275RuntimeError as Ya, computed as Ko, booleanAttribute as pr, EventEmitter as Yo, createEnvironmentInjector as Zo, InjectionToken as Qe, NgZone as Jo, EnvironmentInjector as Xo, DestroyRef as ea, afterNextRender as ta, \u0275promiseWithResolvers as Rn, makeEnvironmentProviders as ra, APP_BOOTSTRAP_LISTENER as In, ENVIRONMENT_INITIALIZER as os, provideAppInitializer as En, \u0275IS_ENABLED_BLOCKING_INITIAL_NAVIGATION as na, Injector as An, \u0275performanceMarkFeature as ia, ApplicationRef as oa } from "@angular/core";
 import { Subject as yr, of as ae, from as At } from "rxjs";
 import { mergeAll as Mt, catchError as aa, filter as sa, concatMap as ca, mergeMap as ua } from "rxjs/operators";
 var la = (() => { class t {
     router = C(H);
     stateManager = C(Te);
-    fragment = O("");
-    queryParams = O({});
-    path = O("");
+    fragment = U("");
+    queryParams = U({});
+    path = U("");
     serializer = C(ie);
-    constructor() { this.updateState(), this.router.events?.subscribe(e => { e instanceof N && this.updateState(); }); }
+    constructor() { this.updateState(), this.router.events?.subscribe(e => { e instanceof D && this.updateState(); }); }
     updateState() { let { fragment: e, root: r, queryParams: i } = this.stateManager.getCurrentUrlTree(); this.fragment.set(e), this.queryParams.set(i), this.path.set(this.serializer.serialize(new T(r))); }
     static \u0275fac = function (r) { return new (r || t); };
     static \u0275prov = d.\u0275\u0275defineInjectable({ token: t, factory: t.\u0275fac, providedIn: "root" });
@@ -1250,34 +1252,34 @@ var la = (() => { class t {
     set href(e) { this.reactiveHref.set(e); }
     set target(e) { this._target.set(e); }
     get target() { return _(this._target); }
-    _target = O(void 0);
+    _target = U(void 0);
     set queryParams(e) { this._queryParams.set(e); }
     get queryParams() { return _(this._queryParams); }
-    _queryParams = O(void 0, { equal: () => !1 });
+    _queryParams = U(void 0, { equal: () => !1 });
     set fragment(e) { this._fragment.set(e); }
     get fragment() { return _(this._fragment); }
-    _fragment = O(void 0);
+    _fragment = U(void 0);
     set queryParamsHandling(e) { this._queryParamsHandling.set(e); }
     get queryParamsHandling() { return _(this._queryParamsHandling); }
-    _queryParamsHandling = O(void 0);
+    _queryParamsHandling = U(void 0);
     set state(e) { this._state.set(e); }
     get state() { return _(this._state); }
-    _state = O(void 0, { equal: () => !1 });
+    _state = U(void 0, { equal: () => !1 });
     set info(e) { this._info.set(e); }
     get info() { return _(this._info); }
-    _info = O(void 0, { equal: () => !1 });
+    _info = U(void 0, { equal: () => !1 });
     set relativeTo(e) { this._relativeTo.set(e); }
     get relativeTo() { return _(this._relativeTo); }
-    _relativeTo = O(void 0);
+    _relativeTo = U(void 0);
     set preserveFragment(e) { this._preserveFragment.set(e); }
     get preserveFragment() { return _(this._preserveFragment); }
-    _preserveFragment = O(!1);
+    _preserveFragment = U(!1);
     set skipLocationChange(e) { this._skipLocationChange.set(e); }
     get skipLocationChange() { return _(this._skipLocationChange); }
-    _skipLocationChange = O(!1);
+    _skipLocationChange = U(!1);
     set replaceUrl(e) { this._replaceUrl.set(e); }
     get replaceUrl() { return _(this._replaceUrl); }
-    _replaceUrl = O(!1);
+    _replaceUrl = U(!1);
     isAnchorElement;
     onChanges = new yr;
     applicationErrorHandler = C(Qo);
@@ -1286,7 +1288,7 @@ var la = (() => { class t {
     constructor(e, r, i, o, s, a) { this.router = e, this.route = r, this.tabIndexAttribute = i, this.renderer = o, this.el = s, this.locationStrategy = a; let c = s.nativeElement.tagName?.toLowerCase(); this.isAnchorElement = c === "a" || c === "area" || !!(typeof customElements == "object" && customElements.get(c)?.observedAttributes?.includes?.("href")); }
     setTabIndexIfNotOnNativeEl(e) { this.tabIndexAttribute != null || this.isAnchorElement || this.applyAttributeValue("tabindex", e); }
     ngOnChanges(e) { this.onChanges.next(this); }
-    routerLinkInput = O(null);
+    routerLinkInput = U(null);
     set routerLink(e) { e == null ? (this.routerLinkInput.set(null), this.setTabIndexIfNotOnNativeEl(null)) : (te(e) ? this.routerLinkInput.set(e) : this.routerLinkInput.set(Array.isArray(e) ? e : [e]), this.setTabIndexIfNotOnNativeEl("0")); }
     onClick(e, r, i, o, s) { let a = this._urlTree(); if (a === null || this.isAnchorElement && (e !== 0 || r || i || o || s || typeof this.target == "string" && this.target != "_self"))
         return !0; let c = { skipLocationChange: this.skipLocationChange, replaceUrl: this.replaceUrl, state: this.state, info: this.info }; return this.router.navigateByUrl(a, c)?.catch(u => { this.applicationErrorHandler(u); }), !this.isAnchorElement; }
@@ -1312,7 +1314,7 @@ var la = (() => { class t {
     ariaCurrentWhenActive;
     isActiveChange = new Yo;
     link = C(Tt, { optional: !0 });
-    constructor(e, r, i, o) { this.router = e, this.element = r, this.renderer = i, this.cdr = o, this.routerEventsSubscription = e.events.subscribe(s => { s instanceof N && this.update(); }); }
+    constructor(e, r, i, o) { this.router = e, this.element = r, this.renderer = i, this.cdr = o, this.routerEventsSubscription = e.events.subscribe(s => { s instanceof D && this.update(); }); }
     ngAfterContentInit() { ae(this.links.changes, ae(null)).pipe(Mt()).subscribe(e => { this.update(), this.subscribeToEachLinkOnChanges(); }); }
     subscribeToEachLinkOnChanges() { this.linkInputChangesSubscription?.unsubscribe(); let e = [...this.links.toArray(), this.link].filter(r => !!r).map(r => r.onChanges); this.linkInputChangesSubscription = At(e).pipe(Mt()).subscribe(r => { this._isActive !== this.isLinkActive(this.router)(r) && this.update(); }); }
     set routerLinkActive(e) { let r = Array.isArray(e) ? e : e.split(" "); this.classes = r.filter(i => !!i); }
@@ -1344,7 +1346,7 @@ var We = class {
     loader;
     subscription;
     constructor(e, r, i, o) { this.router = e, this.injector = r, this.preloadingStrategy = i, this.loader = o; }
-    setUpPreloading() { this.subscription = this.router.events.pipe(sa(e => e instanceof N), ca(() => this.preload())).subscribe(() => { }); }
+    setUpPreloading() { this.subscription = this.router.events.pipe(sa(e => e instanceof D), ca(() => this.preload())).subscribe(() => { }); }
     preload() { return this.processRoutes(this.injector, this.router.config); }
     ngOnDestroy() { this.subscription?.unsubscribe(); }
     processRoutes(e, r) { let i = []; for (let o of r) {
@@ -1363,7 +1365,7 @@ var We = class {
         return o; }); }
     static \u0275fac = function (r) { return new (r || t)(d.\u0275\u0275inject(H), d.\u0275\u0275inject(d.EnvironmentInjector), d.\u0275\u0275inject(We), d.\u0275\u0275inject(St)); };
     static \u0275prov = d.\u0275\u0275defineInjectable({ token: t, factory: t.\u0275fac, providedIn: "root" });
-} return t; })(), Dt = new Qe(""), Tn = (() => { class t {
+} return t; })(), Nt = new Qe(""), Tn = (() => { class t {
     options;
     routerEventsSubscription;
     scrollEventsSubscription;
@@ -1377,7 +1379,7 @@ var We = class {
     transitions = C(It);
     constructor(e) { this.options = e, this.options.scrollPositionRestoration ||= "disabled", this.options.anchorScrolling ||= "disabled"; }
     init() { this.options.scrollPositionRestoration !== "disabled" && this.viewportScroller.setHistoryScrollRestoration("manual"), this.routerEventsSubscription = this.createScrollEvents(), this.scrollEventsSubscription = this.consumeScrollEvents(); }
-    createScrollEvents() { return this.transitions.events.subscribe(e => { e instanceof J ? (this.store[this.lastId] = this.viewportScroller.getScrollPosition(), this.lastSource = e.navigationTrigger, this.restoredId = e.restoredState ? e.restoredState.navigationId : 0) : e instanceof N ? (this.lastId = e.id, this.scheduleScrollEvent(e, this.urlSerializer.parse(e.urlAfterRedirects).fragment)) : e instanceof q && e.code === Ce.IgnoredSameUrlNavigation && (this.lastSource = void 0, this.restoredId = 0, this.scheduleScrollEvent(e, this.urlSerializer.parse(e.url).fragment)); }); }
+    createScrollEvents() { return this.transitions.events.subscribe(e => { e instanceof J ? (this.store[this.lastId] = this.viewportScroller.getScrollPosition(), this.lastSource = e.navigationTrigger, this.restoredId = e.restoredState ? e.restoredState.navigationId : 0) : e instanceof D ? (this.lastId = e.id, this.scheduleScrollEvent(e, this.urlSerializer.parse(e.urlAfterRedirects).fragment)) : e instanceof q && e.code === Ce.IgnoredSameUrlNavigation && (this.lastSource = void 0, this.restoredId = 0, this.scheduleScrollEvent(e, this.urlSerializer.parse(e.url).fragment)); }); }
     consumeScrollEvents() { return this.transitions.events.subscribe(e => { if (!(e instanceof Se) || e.scrollBehavior === "manual")
         return; let r = { behavior: "instant" }; e.position ? this.options.scrollPositionRestoration === "top" ? this.viewportScroller.scrollToPosition([0, 0], r) : this.options.scrollPositionRestoration === "enabled" && this.viewportScroller.scrollToPosition(e.position, r) : e.anchor && this.options.anchorScrolling === "enabled" ? this.viewportScroller.scrollToAnchor(e.anchor) : this.options.scrollPositionRestoration !== "disabled" && this.viewportScroller.scrollToPosition([0, 0]); }); }
     scheduleScrollEvent(e, r) { let i = _(this.transitions.currentNavigation)?.extras.scroll; this.zone.runOutsideAngular(() => R(this, null, function* () { yield new Promise(o => { setTimeout(o), typeof requestAnimationFrame < "u" && requestAnimationFrame(o); }), this.zone.run(() => { this.transitions.events.next(new Se(e, this.lastSource === "popstate" ? this.store[this.restoredId] : null, r, i)); }); })); }
@@ -1388,7 +1390,7 @@ var We = class {
 var ga = (() => { class t extends Te {
     injector = C(Xo);
     navigation = C(zo);
-    inMemoryScrollingEnabled = C(Dt, { optional: !0 }) !== null;
+    inMemoryScrollingEnabled = C(Nt, { optional: !0 }) !== null;
     base = new URL(C(Fo).href).origin;
     appRootURL = new URL(this.location.prepareExternalUrl?.("/") ?? "/", this.base).href;
     precommitHandlerSupported = C(qo);
@@ -1424,13 +1426,13 @@ var ga = (() => { class t extends Te {
             return;
         this.cancel(r, e);
     }
-    else if (e instanceof N) {
+    else if (e instanceof D) {
         let { resolveHandler: i, removeAbortListener: o } = this.currentNavigation;
         this.currentNavigation = {}, o?.(), this.activeHistoryEntry = this.navigation.currentEntry, ta({ read: () => i?.() }, { injector: this.injector });
     } }); }
     maybeCreateNavigationForTransition(e) { let { navigationEvent: r, commitUrl: i } = this.currentNavigation; if (i || r && r.navigationType === "traverse" && this.eventAndRouterDestinationsMatch(r, e))
         return; this.currentNavigation.removeAbortListener?.(); let o = this.createBrowserPath(e); this.navigate(o, e); }
-    navigate(e, r) { let i = r.extras.skipLocationChange ? this.navigation.currentEntry.url : this.location.prepareExternalUrl(e), o = E(l({}, r.extras.state), { navigationId: r.id }), s = { \u0275routerInfo: { intercept: !0 } }; !this.navigation.transition && this.currentNavigation.navigationEvent && (r.extras.replaceUrl = !1); let a = this.location.isCurrentPathEqualTo(i) || r.extras.replaceUrl || r.extras.skipLocationChange ? "replace" : "push"; gr(this.navigation.navigate(i, { state: o, history: a, info: s })); }
+    navigate(e, r) { let i = r.extras.skipLocationChange ? this.navigation.currentEntry.url : this.location.prepareExternalUrl(e), o = l(l({}, r.extras.state), this.generateNgRouterState(r)), s = { \u0275routerInfo: { intercept: !0 } }; !this.navigation.transition && this.currentNavigation.navigationEvent && (r.extras.replaceUrl = !1); let a = this.location.isCurrentPathEqualTo(i) || r.extras.replaceUrl || r.extras.skipLocationChange ? "replace" : "push"; gr(this.navigation.navigate(i, { state: o, history: a, info: s })); }
     finishNavigation() { this.currentNavigation.commitUrl?.(), this.currentNavigation?.resolveHandler?.(), this.currentNavigation = {}; }
     cancel(e, r) { return R(this, null, function* () { this.currentNavigation.rejectNavigateEvent?.(); let i = {}; if (this.currentNavigation = i, nr(r))
         return; let o = this.canceledNavigationResolution === "computed" && this.navigation.currentEntry.key !== this.activeHistoryEntry.key; if (this.resetInternalState(e.finalUrl, o), this.navigation.currentEntry.id !== this.activeHistoryEntry.id && !(r instanceof M && r.code === b.Aborted && (yield Promise.resolve(), this.currentNavigation !== i)))
@@ -1449,28 +1451,29 @@ var ga = (() => { class t extends Te {
     } this.currentNavigation = l({}, this.currentNavigation), this.currentNavigation.navigationEvent = e; let o = () => { this.currentNavigation.routerTransition?.abort(); }; e.signal.addEventListener("abort", o), this.currentNavigation.removeAbortListener = () => e.signal.removeEventListener("abort", o); let a = { scroll: this.inMemoryScrollingEnabled ? "manual" : this.currentNavigation.routerTransition?.extras.scroll ?? "after-transition" }, { promise: c, resolve: u, reject: h } = Rn(), { promise: f, resolve: S, reject: K } = Rn(); if (this.currentNavigation.rejectNavigateEvent = () => { e.signal.removeEventListener("abort", o), K(), h(); }, this.currentNavigation.resolveHandler = () => { this.currentNavigation.removeAbortListener?.(), u(); }, c.catch(() => { }), f.catch(() => { }), a.handler = () => c, this.deferredCommitSupported(e)) {
         let j = new Promise(I => { a.precommitHandler = k => (this.navigation.transition?.navigationType === "traverse" ? I(() => { }) : I(k.redirect.bind(k)), f); });
         this.currentNavigation.commitUrl = () => R(this, null, function* () { this.currentNavigation.commitUrl = void 0; let I = this.currentNavigation.routerTransition; if (I && !I.extras.skipLocationChange) {
-            let k = this.createBrowserPath(I), De = this.location.isCurrentPathEqualTo(k) || I.extras.replaceUrl ? "replace" : "push", se = E(l({}, I.extras.state), { navigationId: I.id }), ge = this.location.prepareExternalUrl(k);
-            (yield j)(ge, { state: se, history: De });
+            let k = this.createBrowserPath(I), Ne = this.location.isCurrentPathEqualTo(k) || I.extras.replaceUrl ? "replace" : "push", se = l(l({}, I.extras.state), this.generateNgRouterState(I)), ge = this.location.prepareExternalUrl(k);
+            (yield j)(ge, { state: se, history: Ne });
         } return S(), yield this.navigation.transition?.committed; });
     } e.intercept(a), i || this.handleNavigateEventTriggeredOutsideRouterAPIs(e); }
     handleNavigateEventTriggeredOutsideRouterAPIs(e) { let r = e.destination.url.substring(this.appRootURL.length - 1), i = e.destination.getState(); this.nonRouterCurrentEntryChangeSubject.next({ path: r, state: i }); }
     eventAndRouterDestinationsMatch(e, r) { let i = this.createBrowserPath(r), o = new URL(e.destination.url), s = this.location.prepareExternalUrl(i); return new URL(s, o.origin).href === o.href; }
+    generateNgRouterState(e) { return E(l({}, this.routerUrlState(e)), { navigationId: e.id }); }
     deferredCommitSupported(e) { return this.precommitHandlerSupported && e.cancelable; }
     static \u0275fac = function (r) { return new (r || t); };
     static \u0275prov = d.\u0275\u0275defineInjectable({ token: t, factory: t.\u0275fac, providedIn: "root" });
 } return t; })();
 function gr(t) { return t.finished?.catch(() => { }), t.committed?.catch(() => { }), t; }
-function va(t, ...n) { return ra([{ provide: oe, multi: !0, useValue: t }, [], { provide: Q, useFactory: Dn }, { provide: In, multi: !0, useFactory: Nn }, n.map(e => e.\u0275providers)]); }
-function Dn() { return C(H).routerState.root; }
+function va(t, ...n) { return ra([{ provide: oe, multi: !0, useValue: t }, [], { provide: Q, useFactory: Nn }, { provide: In, multi: !0, useFactory: Dn }, n.map(e => e.\u0275providers)]); }
+function Nn() { return C(H).routerState.root; }
 function x(t, n) { return { \u0275kind: t, \u0275providers: n }; }
 function ma(t) { return [{ provide: oe, multi: !0, useValue: t }, []]; }
-function ya(t = {}) { return x(4, [{ provide: Dt, useFactory: () => new Tn(t) }]); }
+function ya(t = {}) { return x(4, [{ provide: Nt, useFactory: () => new Tn(t) }]); }
 function Ra() { return x(11, [{ provide: Te, useExisting: ga }, { provide: wn, useClass: Bo }, []]); }
-function Nn() { let t = C(An); return n => { let e = t.get(oa); if (n !== e.components[0])
-    return; let r = t.get(H), i = t.get(_n); t.get(Rr) === 1 && r.initialNavigation(), t.get(Pn, null, { optional: !0 })?.setUpPreloading(), t.get(Dt, null, { optional: !0 })?.init(), r.resetRootComponentType(e.componentTypes[0]), i.closed || (i.next(), i.complete(), i.unsubscribe()); }; }
+function Dn() { let t = C(An); return n => { let e = t.get(oa); if (n !== e.components[0])
+    return; let r = t.get(H), i = t.get(_n); t.get(Rr) === 1 && r.initialNavigation(), t.get(Pn, null, { optional: !0 })?.setUpPreloading(), t.get(Nt, null, { optional: !0 })?.init(), r.resetRootComponentType(e.componentTypes[0]), i.closed || (i.next(), i.complete(), i.unsubscribe()); }; }
 var _n = new Qe("", { factory: () => new yr }), Rr = new Qe("", { factory: () => 1 });
-function On() { let t = [{ provide: na, useValue: !0 }, { provide: Rr, useValue: 0 }, En(() => { let n = C(An); return n.get(Ho, Promise.resolve()).then(() => new Promise(r => { let i = n.get(H), o = n.get(_n); Et(i, () => { r(!0); }), n.get(It).afterPreactivation = () => (r(!0), o.closed ? ae(void 0) : o), i.initialNavigation(); })); })]; return x(2, t); }
-function Un() { let t = [En(() => { C(H).setUpLocationChangeListener(); }), { provide: Rr, useValue: 2 }]; return x(3, t); }
+function Un() { let t = [{ provide: na, useValue: !0 }, { provide: Rr, useValue: 0 }, En(() => { let n = C(An); return n.get(Ho, Promise.resolve()).then(() => new Promise(r => { let i = n.get(H), o = n.get(_n); Et(i, () => { r(!0); }), n.get(It).afterPreactivation = () => (r(!0), o.closed ? ae(void 0) : o), i.initialNavigation(); })); })]; return x(2, t); }
+function On() { let t = [En(() => { C(H).setUpLocationChangeListener(); }), { provide: Rr, useValue: 2 }]; return x(3, t); }
 function Ca() { let t = []; return t = [], x(1, t); }
 var Pn = new Qe("");
 function Ln(t) { return x(0, [{ provide: Pn, useExisting: Mn }, { provide: We, useExisting: t }]); }
@@ -1480,20 +1483,20 @@ function ba(t) { return x(7, [{ provide: bt, useValue: t }]); }
 function Ia() { return x(10, [{ provide: fr, useValue: vn }]); }
 function xn() { return x(8, [sr, { provide: Ve, useExisting: sr }]); }
 function jn(t) { ia("NgRouterViewTransitions"); let n = [{ provide: dr, useValue: gn }, { provide: hr, useValue: l({ skipNextTransition: !!t?.skipInitialTransition }, t) }]; return x(9, n); }
-var kn = [wn, { provide: ie, useClass: Z }, H, pe, { provide: Q, useFactory: Dn }, St, []], Ea = (() => { class t {
+var kn = [wn, { provide: ie, useClass: Z }, H, pe, { provide: Q, useFactory: Nn }, St, []], Ea = (() => { class t {
     constructor() { }
-    static forRoot(e, r) { return { ngModule: t, providers: [kn, [], { provide: oe, multi: !0, useValue: e }, [], r?.errorHandler ? { provide: bt, useValue: r.errorHandler } : [], { provide: X, useValue: r || {} }, r?.useHash ? Ma() : Ta(), Aa(), r?.preloadingStrategy ? Ln(r.preloadingStrategy).\u0275providers : [], r?.initialNavigation ? Da(r) : [], r?.bindToComponentInputs ? xn().\u0275providers : [], r?.enableViewTransitions ? jn().\u0275providers : [], Na()] }; }
+    static forRoot(e, r) { return { ngModule: t, providers: [kn, [], { provide: oe, multi: !0, useValue: e }, [], r?.errorHandler ? { provide: bt, useValue: r.errorHandler } : [], { provide: X, useValue: r || {} }, r?.useHash ? Ma() : Ta(), Aa(), r?.preloadingStrategy ? Ln(r.preloadingStrategy).\u0275providers : [], r?.initialNavigation ? Na(r) : [], r?.bindToComponentInputs ? xn().\u0275providers : [], r?.enableViewTransitions ? jn().\u0275providers : [], Da()] }; }
     static forChild(e) { return { ngModule: t, providers: [{ provide: oe, multi: !0, useValue: e }] }; }
     static \u0275fac = function (r) { return new (r || t); };
     static \u0275mod = d.\u0275\u0275defineNgModule({ type: t });
     static \u0275inj = d.\u0275\u0275defineInjector({});
 } return t; })();
-function Aa() { return { provide: Dt, useFactory: () => { let t = C(Sn), n = C(X); return n.scrollOffset && t.setOffset(n.scrollOffset), new Tn(n); } }; }
+function Aa() { return { provide: Nt, useFactory: () => { let t = C(Sn), n = C(X); return n.scrollOffset && t.setOffset(n.scrollOffset), new Tn(n); } }; }
 function Ma() { return { provide: mr, useClass: bn }; }
 function Ta() { return { provide: mr, useClass: Vo }; }
-function Da(t) { return [t.initialNavigation === "disabled" ? Un().\u0275providers : [], t.initialNavigation === "enabledBlocking" ? On().\u0275providers : []]; }
+function Na(t) { return [t.initialNavigation === "disabled" ? On().\u0275providers : [], t.initialNavigation === "enabledBlocking" ? Un().\u0275providers : []]; }
 var vr = new Qe("");
-function Na() { return [{ provide: vr, useFactory: Nn }, { provide: In, multi: !0, useExisting: vr }]; }
+function Da() { return [{ provide: vr, useFactory: Dn }, { provide: In, multi: !0, useExisting: vr }]; }
 import { inject as Ke, Version as _a } from "@angular/core";
 import "@angular/common";
 import "rxjs";
@@ -1504,15 +1507,15 @@ function Cs(t) { return t.map(n => (...e) => Ke(n).canActivate(...e)); }
 function Ss(t) { return t.map(n => (...e) => Ke(n).canActivateChild(...e)); }
 function ws(t) { return t.map(n => (...e) => Ke(n).canDeactivate(...e)); }
 function bs(t) { return (...n) => Ke(t).resolve(...n); }
-var Is = new _a("21.2.8");
-export { Q as ActivatedRoute, Ie as ActivatedRouteSnapshot, pt as ActivationEnd, ft as ActivationStart, Rt as BaseRouteReuseStrategy, ht as ChildActivationEnd, dt as ChildActivationStart, pe as ChildrenOutletContexts, dn as DefaultTitleStrategy, Z as DefaultUrlSerializer, w as EventType, at as GuardsCheckEnd, ot as GuardsCheckStart, M as NavigationCancel, b as NavigationCancellationCode, N as NavigationEnd, re as NavigationError, q as NavigationSkipped, Ce as NavigationSkippedCode, J as NavigationStart, pa as NoPreloading, gt as OutletContext, p as PRIMARY_OUTLET, fa as PreloadAllModules, We as PreloadingStrategy, X as ROUTER_CONFIGURATION, vr as ROUTER_INITIALIZER, Jr as ROUTER_OUTLET_DATA, oe as ROUTES, Ee as RedirectCommand, ct as ResolveEnd, st as ResolveStart, lt as RouteConfigLoadEnd, ut as RouteConfigLoadStart, yn as RouteReuseStrategy, H as Router, P as RouterEvent, Tt as RouterLink, da as RouterLinkActive, Tt as RouterLinkWithHref, Ea as RouterModule, ar as RouterOutlet, Mn as RouterPreloader, ze as RouterState, Fe as RouterStateSnapshot, $e as RoutesRecognized, Se as Scroll, lr as TitleStrategy, wt as UrlHandlingStrategy, ee as UrlSegment, m as UrlSegmentGroup, ie as UrlSerializer, T as UrlTree, Is as VERSION, le as convertToParamMap, Br as createUrlTreeFromSnapshot, Ur as defaultUrlMatcher, xo as destroyDetachedRouteHandle, rr as isActive, Cs as mapToCanActivate, Ss as mapToCanActivateChild, ws as mapToCanDeactivate, Rs as mapToCanMatch, bs as mapToResolve, va as provideRouter, ma as provideRoutes, xn as withComponentInputBinding, Ca as withDebugTracing, Un as withDisabledInitialNavigation, On as withEnabledBlockingInitialNavigation, Ia as withExperimentalAutoCleanupInjectors, Ra as withExperimentalPlatformNavigation, wa as withHashLocation, ya as withInMemoryScrolling, ba as withNavigationErrorHandler, Ln as withPreloading, Sa as withRouterConfig, jn as withViewTransitions, cr as \u0275EmptyOutletComponent, kn as \u0275ROUTER_PROVIDERS, Et as \u0275afterNextNavigation, hn as \u0275loadChildren };
+var Is = new _a("21.2.12");
+export { Q as ActivatedRoute, Ie as ActivatedRouteSnapshot, pt as ActivationEnd, ft as ActivationStart, Rt as BaseRouteReuseStrategy, ht as ChildActivationEnd, dt as ChildActivationStart, pe as ChildrenOutletContexts, dn as DefaultTitleStrategy, Z as DefaultUrlSerializer, w as EventType, at as GuardsCheckEnd, ot as GuardsCheckStart, M as NavigationCancel, b as NavigationCancellationCode, D as NavigationEnd, re as NavigationError, q as NavigationSkipped, Ce as NavigationSkippedCode, J as NavigationStart, pa as NoPreloading, gt as OutletContext, p as PRIMARY_OUTLET, fa as PreloadAllModules, We as PreloadingStrategy, X as ROUTER_CONFIGURATION, vr as ROUTER_INITIALIZER, Jr as ROUTER_OUTLET_DATA, oe as ROUTES, Ee as RedirectCommand, ct as ResolveEnd, st as ResolveStart, lt as RouteConfigLoadEnd, ut as RouteConfigLoadStart, yn as RouteReuseStrategy, H as Router, P as RouterEvent, Tt as RouterLink, da as RouterLinkActive, Tt as RouterLinkWithHref, Ea as RouterModule, ar as RouterOutlet, Mn as RouterPreloader, ze as RouterState, Fe as RouterStateSnapshot, $e as RoutesRecognized, Se as Scroll, lr as TitleStrategy, wt as UrlHandlingStrategy, ee as UrlSegment, m as UrlSegmentGroup, ie as UrlSerializer, T as UrlTree, Is as VERSION, le as convertToParamMap, Br as createUrlTreeFromSnapshot, Or as defaultUrlMatcher, xo as destroyDetachedRouteHandle, rr as isActive, Cs as mapToCanActivate, Ss as mapToCanActivateChild, ws as mapToCanDeactivate, Rs as mapToCanMatch, bs as mapToResolve, va as provideRouter, ma as provideRoutes, xn as withComponentInputBinding, Ca as withDebugTracing, On as withDisabledInitialNavigation, Un as withEnabledBlockingInitialNavigation, Ia as withExperimentalAutoCleanupInjectors, Ra as withExperimentalPlatformNavigation, wa as withHashLocation, ya as withInMemoryScrolling, ba as withNavigationErrorHandler, Ln as withPreloading, Sa as withRouterConfig, jn as withViewTransitions, cr as \u0275EmptyOutletComponent, kn as \u0275ROUTER_PROVIDERS, Et as \u0275afterNextNavigation, hn as \u0275loadChildren };
 /*! Bundled license information:
 
 @angular/router/fesm2022/_router-chunk.mjs:
 @angular/router/fesm2022/_router_module-chunk.mjs:
 @angular/router/fesm2022/router.mjs:
   (**
-   * @license Angular v21.2.8
+   * @license Angular v21.2.12
    * (c) 2010-2026 Google LLC. https://angular.dev/
    * License: MIT
    *)
